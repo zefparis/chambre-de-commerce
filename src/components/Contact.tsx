@@ -1,0 +1,198 @@
+"use client";
+
+import { useState } from "react";
+import { useLanguage } from "@/hooks/useLanguage";
+import { Phone, Mail, Globe, MapPin, Send } from "lucide-react";
+
+export default function Contact() {
+  const { t } = useLanguage();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    company: "",
+    country: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+  };
+
+  const contactInfo = [
+    { icon: Phone, label: "+243 846 870 811 / +243 999 979 173 / +243 995 941 338" },
+    { icon: Mail, label: "ccne-rdc23@gmail.com", href: "mailto:ccne-rdc23@gmail.com" },
+    { icon: Globe, label: "www.ccne-rdc.com", href: "https://www.ccne-rdc.com" },
+    { icon: MapPin, label: "16 Avenue Londola, Commune de Lingwala, Kinshasa, RDC" },
+  ];
+
+  return (
+    <section id="contact" className="relative py-24 bg-white">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 mb-4">
+            <div className="h-px w-8 bg-[#C5A55A]" />
+            <span className="text-[#C5A55A] text-sm font-semibold tracking-widest uppercase">
+              {t.nav.contact}
+            </span>
+            <div className="h-px w-8 bg-[#C5A55A]" />
+          </div>
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-[#003DA5] leading-tight">
+            {t.contact.title}
+          </h2>
+          <p className="mt-4 text-lg text-gray-600">
+            {t.contact.subtitle}
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-5 gap-12">
+          {/* Contact info */}
+          <div className="lg:col-span-2 space-y-6">
+            {contactInfo.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.label} className="flex items-start gap-4">
+                  <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-xl bg-[#003DA5]/5">
+                    <Icon className="h-5 w-5 text-[#003DA5]" />
+                  </div>
+                  <div className="flex-1 pt-2">
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        className="text-gray-700 hover:text-[#003DA5] transition-colors text-sm leading-relaxed"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {item.label}
+                      </a>
+                    ) : (
+                      <p className="text-gray-700 text-sm leading-relaxed">
+                        {item.label}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+
+            {/* Map embed */}
+            <div className="mt-8 rounded-2xl overflow-hidden border border-gray-100 shadow-sm h-56">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15915.5!2d15.3!3d-4.32!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a6a3130a1a3e8c1%3A0x5e3f8e51c5b5a3e!2sLingwala%2C%20Kinshasa!5e0!3m2!1sfr!2scd!4v1700000000000!5m2!1sfr!2scd"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="CCNE-RDC Location"
+              />
+            </div>
+          </div>
+
+          {/* Contact form */}
+          <div className="lg:col-span-3">
+            <form onSubmit={handleSubmit} className="bg-[#F8F9FA] rounded-2xl p-8 border border-gray-100">
+              <div className="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5">
+                    {t.contact.form.name}
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-[#003DA5] focus:ring-2 focus:ring-[#003DA5]/20 outline-none transition-all"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5">
+                    {t.contact.form.email}
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-[#003DA5] focus:ring-2 focus:ring-[#003DA5]/20 outline-none transition-all"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1.5">
+                    {t.contact.form.company}
+                  </label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-[#003DA5] focus:ring-2 focus:ring-[#003DA5]/20 outline-none transition-all"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="country" className="block text-sm font-medium text-gray-700 mb-1.5">
+                    {t.contact.form.country}
+                  </label>
+                  <input
+                    type="text"
+                    id="country"
+                    name="country"
+                    value={formData.country}
+                    onChange={handleChange}
+                    className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-[#003DA5] focus:ring-2 focus:ring-[#003DA5]/20 outline-none transition-all"
+                  />
+                </div>
+                <div className="sm:col-span-2">
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1.5">
+                    {t.contact.form.subject}
+                  </label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                    className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-[#003DA5] focus:ring-2 focus:ring-[#003DA5]/20 outline-none transition-all"
+                  />
+                </div>
+                <div className="sm:col-span-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1.5">
+                    {t.contact.form.message}
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={5}
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-[#003DA5] focus:ring-2 focus:ring-[#003DA5]/20 outline-none transition-all resize-none"
+                  />
+                </div>
+              </div>
+              <button
+                type="submit"
+                className="mt-6 inline-flex items-center gap-2 rounded-lg bg-[#003DA5] px-8 py-3.5 text-sm font-semibold text-white shadow-lg hover:bg-[#002d7a] hover:shadow-xl transition-all"
+              >
+                <Send className="h-4 w-4" />
+                {t.contact.form.send}
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
