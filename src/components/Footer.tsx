@@ -22,18 +22,12 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Logo & description */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
+            <div className="mb-4">
               <img
-                src="/images/logo-ccne.png"
-                alt="CCNE-RDC"
-                className="h-10 w-auto"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).style.display = "none";
-                }}
+                src="/images/logos/LOGO-CCNE.jpg"
+                alt="CCNE-RDC — Chambre de Commerce Nationale et de l'Économie"
+                className="h-16 w-auto rounded bg-white/90 p-1.5"
               />
-              <span className="font-display text-xl font-bold text-white">
-                CCNE-RDC
-              </span>
             </div>
             <p className="text-blue-200/60 text-sm leading-relaxed">
               Chambre de Commerce Nationale et de l&apos;Économie de la République Démocratique du Congo

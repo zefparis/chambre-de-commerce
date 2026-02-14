@@ -46,22 +46,14 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-3 shrink-0">
+          <a href="#home" className="flex items-center shrink-0">
             <img
-              src="/images/logo-ccne.png"
-              alt="CCNE-RDC"
-              className="h-12 w-auto"
-              onError={(e) => {
-                (e.target as HTMLImageElement).style.display = "none";
-              }}
-            />
-            <span
-              className={`font-display text-lg font-bold tracking-tight transition-colors ${
-                scrolled ? "text-[#003DA5]" : "text-white"
+              src="/images/logos/LOGO-CCNE.jpg"
+              alt="CCNE-RDC — Chambre de Commerce Nationale et de l'Économie"
+              className={`h-14 w-auto transition-all ${
+                scrolled ? "rounded" : "rounded bg-white/90 p-1"
               }`}
-            >
-              CCNE-RDC
-            </span>
+            />
           </a>
 
           {/* Desktop Nav */}
