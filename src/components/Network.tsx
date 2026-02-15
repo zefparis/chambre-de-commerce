@@ -5,20 +5,20 @@ import { MapPin } from "lucide-react";
 type Lang = "fr" | "en";
 
 const countryFlags: Record<string, string> = {
-  "Zambie": "🇿🇲", "Zambia": "🇿🇲",
-  "Canada": "🇨🇦",
-  "Mexique": "🇲🇽", "Mexico": "🇲🇽",
-  "Royaume-Uni": "🇬🇧", "United Kingdom": "🇬🇧",
-  "Maroc": "🇲🇦", "Morocco": "🇲🇦",
-  "États-Unis": "🇺🇸", "United States": "🇺🇸",
-  "Afrique du Sud": "🇿🇦", "South Africa": "🇿🇦",
+  "Zambie": "/images/flags/zambia.svg", "Zambia": "/images/flags/zambia.svg",
+  "Canada": "/images/flags/canada.svg",
+  "Mexique": "/images/flags/mexico.svg", "Mexico": "/images/flags/mexico.svg",
+  "Royaume-Uni": "/images/flags/united-kingdom.svg", "United Kingdom": "/images/flags/united-kingdom.svg",
+  "Maroc": "/images/flags/morocco.svg", "Morocco": "/images/flags/morocco.svg",
+  "États-Unis": "/images/flags/united-states.svg", "United States": "/images/flags/united-states.svg",
+  "Afrique du Sud": "/images/flags/south-africa.svg", "South Africa": "/images/flags/south-africa.svg",
   "Benelux": "🇪🇺",
-  "Japon": "🇯🇵", "Japan": "🇯🇵",
-  "Iran": "🇮🇷",
-  "Côte d'Ivoire": "🇨🇮", "Ivory Coast": "🇨🇮",
-  "Namibie": "🇳🇦", "Namibia": "🇳🇦",
-  "France": "🇫🇷",
-  "Belgique": "🇧🇪", "Belgium": "🇧🇪",
+  "Japon": "/images/flags/japan.svg", "Japan": "/images/flags/japan.svg",
+  "Iran": "/images/flags/iran.svg",
+  "Côte d'Ivoire": "/images/flags/ivory-coast.svg", "Ivory Coast": "/images/flags/ivory-coast.svg",
+  "Namibie": "/images/flags/namibia.svg", "Namibia": "/images/flags/namibia.svg",
+  "France": "/images/flags/france.svg",
+  "Belgique": "/images/flags/belgium.svg", "Belgium": "/images/flags/belgium.svg",
   "SADC": "🌍",
 };
 
@@ -59,9 +59,17 @@ export default function Network() {
               key={country}
               className="group flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-4 hover:bg-white/10 hover:border-[#C5A55A]/40 transition-all duration-300"
             >
-              <span className="text-2xl" role="img" aria-label={country}>
-                {countryFlags[country] || "🌐"}
-              </span>
+              {countryFlags[country].startsWith('/') ? (
+                <img 
+                  src={countryFlags[country]} 
+                  alt={country}
+                  className="w-8 h-6 object-cover rounded-sm"
+                />
+              ) : (
+                <span className="text-2xl" role="img" aria-label={country}>
+                  {countryFlags[country] || "🌐"}
+                </span>
+              )}
               <span className="text-sm font-medium text-white/90 group-hover:text-white">
                 {country}
               </span>
