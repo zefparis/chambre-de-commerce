@@ -38,22 +38,29 @@ export default function Partners() {
           {partners.map((partner) => (
             <div
               key={partner.name}
-              className="group flex flex-col items-center justify-center p-6 rounded-2xl border border-gray-100 bg-[#F8F9FA] hover:bg-white hover:shadow-lg hover:border-[#003DA5]/10 transition-all duration-300"
+              className="group relative flex flex-col items-center justify-center p-8 rounded-2xl border-2 border-gray-100 bg-white hover:bg-gradient-to-br hover:from-white hover:to-blue-50/30 hover:shadow-2xl hover:border-[#003DA5]/20 hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="h-16 w-full flex items-center justify-center grayscale group-hover:grayscale-0 opacity-60 group-hover:opacity-100 transition-all duration-300">
+              {/* Decorative corner accent */}
+              <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-[#C5A55A]/10 to-transparent rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              
+              <div className="relative h-20 w-full flex items-center justify-center mb-4">
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="max-h-full max-w-full object-contain"
+                  className="max-h-full max-w-full object-contain filter grayscale-[30%] group-hover:grayscale-0 opacity-80 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = "none";
                   }}
                 />
               </div>
-              <p className="mt-3 text-xs text-center text-gray-500 group-hover:text-[#003DA5] font-medium transition-colors leading-tight">
+              
+              <p className="text-xs text-center text-gray-600 group-hover:text-[#003DA5] font-semibold transition-colors leading-tight">
                 {partner.name}
               </p>
+              
+              {/* Bottom accent line */}
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-1 w-0 bg-gradient-to-r from-[#003DA5] via-[#C5A55A] to-[#003DA5] group-hover:w-3/4 transition-all duration-500 rounded-t-full" />
             </div>
           ))}
         </div>
