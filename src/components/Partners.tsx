@@ -19,7 +19,7 @@ export default function Partners() {
   const { t } = useLanguage();
 
   return (
-    <section id="partners" className="relative py-24 bg-white">
+    <section id="partners" className="relative py-24 bg-[#faf8f5]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-4">

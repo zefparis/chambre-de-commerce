@@ -18,7 +18,7 @@ export default function Sectors() {
   const { t } = useLanguage();
 
   return (
-    <section id="sectors" className="relative py-24 bg-white">
+    <section id="sectors" className="relative py-24 bg-[#faf8f5]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-4">
@@ -42,7 +42,7 @@ export default function Sectors() {
             return (
               <div
                 key={key}
-                className="group relative overflow-hidden rounded-2xl border border-gray-100 text-center hover:border-[#003DA5]/20 hover:shadow-lg transition-all duration-300"
+                className="group relative overflow-hidden rounded-2xl border-2 border-gray-200/80 text-center hover:border-[#003DA5]/40 hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-300"
                 style={{
                   backgroundImage: `url('${sectorImages[index]}')`,
                   backgroundSize: "cover",

@@ -57,7 +57,7 @@ export default function Network() {
           {t.network.countries.map((country) => (
             <div
               key={country}
-              className="group flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl px-4 py-4 hover:bg-white/10 hover:border-[#C5A55A]/40 transition-all duration-300"
+              className="group flex items-center gap-3 bg-white/5 backdrop-blur-sm border-2 border-white/20 rounded-xl px-4 py-4 hover:bg-white/10 hover:border-[#C5A55A]/60 hover:shadow-lg transition-all duration-300"
             >
               {countryFlags[country].startsWith('/') ? (
                 <img 

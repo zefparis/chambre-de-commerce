@@ -16,7 +16,7 @@ export default function WhyInvest() {
   ];
 
   return (
-    <section id="why-invest" className="relative py-24 bg-[#F8F9FA]">
+    <section id="why-invest" className="relative py-24 bg-[#f5f3f0]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="text-center mb-16">
@@ -39,7 +39,7 @@ export default function WhyInvest() {
             return (
               <div
                 key={index}
-                className="group relative bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-xl hover:border-[#003DA5]/20 transition-all duration-300"
+                className="group relative bg-white rounded-2xl p-8 border-2 border-gray-200/80 shadow-md hover:shadow-2xl hover:border-[#003DA5]/30 hover:-translate-y-0.5 transition-all duration-300"
               >
                 <div className="flex items-start gap-5">
                   <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-[#003DA5] to-[#4A90D9] text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
