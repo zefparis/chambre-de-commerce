@@ -85,7 +85,7 @@ export default function Footer() {
               {[
                 { src: "/images/logos/ministere-affaires-etrangeres.png", alt: "MAE" },
                 { src: "/images/logos/ministere-commerce-exterieur.png", alt: "MCE" },
-                { src: "/images/logos/ministere-entrepreneuriat-pme.png", alt: "MPME" },
+                { src: "/images/logos/ministere-entrepreneuriat-pme.jpg", alt: "MPME" },
                 { src: "/images/logos/ministere-plan.png", alt: "MPlan" },
               ].map((logo) => (
                 <div key={logo.alt} className="h-10 flex items-center justify-center opacity-40 hover:opacity-80 transition-opacity">
