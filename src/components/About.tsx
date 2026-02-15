@@ -14,7 +14,7 @@ export default function About() {
   const { t } = useLanguage();
 
   return (
-    <section id="about" className="relative py-24 bg-[#faf8f5]">
+    <section id="about" className="relative py-24 bg-[#f0ebe5]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="text-center mb-16">
@@ -42,7 +42,7 @@ export default function About() {
           </div>
 
           {/* Role card */}
-          <div className="bg-gradient-to-br from-[#F8F9FA] to-white rounded-2xl p-8 border-2 border-gray-200/80 shadow-md">
+          <div className="bg-gradient-to-br from-[#F8F9FA] to-white rounded-2xl p-8 border-[3px] border-gray-300/90 shadow-lg">
             <div className="flex items-center gap-3 mb-6">
               <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#003DA5]/10">
                 <Target className="h-6 w-6 text-[#003DA5]" />

@@ -19,7 +19,7 @@ export default function Partners() {
   const { t } = useLanguage();
 
   return (
-    <section id="partners" className="relative py-24 bg-[#faf8f5]">
+    <section id="partners" className="relative py-24 bg-[#f0ebe5]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-4">
@@ -38,7 +38,7 @@ export default function Partners() {
           {partners.map((partner) => (
             <div
               key={partner.name}
-              className="group relative flex flex-col items-center justify-center p-8 rounded-2xl border-2 border-gray-100 bg-white hover:bg-gradient-to-br hover:from-white hover:to-blue-50/30 hover:shadow-2xl hover:border-[#003DA5]/20 hover:-translate-y-1 transition-all duration-300"
+              className="group relative flex flex-col items-center justify-center p-8 rounded-2xl border-[3px] border-gray-300/90 bg-white hover:bg-gradient-to-br hover:from-white hover:to-blue-50/30 hover:shadow-2xl hover:border-[#003DA5]/50 hover:-translate-y-1 transition-all duration-300"
             >
               {/* Decorative corner accent */}
               <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-[#C5A55A]/10 to-transparent rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
