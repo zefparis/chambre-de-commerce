@@ -46,7 +46,7 @@ export default function Partners() {
               {/* Decorative corner accent */}
               <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-[#C5A55A]/10 to-transparent rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               
-              <div className="relative h-20 w-full flex items-center justify-center mb-4">
+              <div className="relative h-24 w-full flex items-center justify-center mb-5">
                 <img
                   src={partner.logo}
                   alt={partner.name}
@@ -58,7 +58,7 @@ export default function Partners() {
                 />
               </div>
               
-              <p className="text-xs text-center text-gray-600 group-hover:text-[#003DA5] font-semibold transition-colors leading-tight">
+              <p className="text-sm text-center text-gray-700 group-hover:text-[#003DA5] font-semibold transition-colors leading-snug">
                 {partner.name}
               </p>
               
