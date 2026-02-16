@@ -18,48 +18,61 @@ export default function Sectors() {
   const { t } = useLanguage();
 
   return (
-    <section id="sectors" className="relative py-24 bg-[#f0ebe5]">
+    <section id="sectors" className="relative py-32 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 mb-4">
-            <div className="h-px w-8 bg-[#C5A55A]" />
-            <span className="text-[#C5A55A] text-sm font-semibold tracking-widest uppercase">
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center gap-2 mb-6">
+            <span className="px-3 py-1 rounded-full border border-[#003DA5]/10 bg-[#003DA5]/5 text-[#003DA5] text-xs font-semibold tracking-widest uppercase">
               {t.nav.services}
             </span>
-            <div className="h-px w-8 bg-[#C5A55A]" />
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-[#003DA5] leading-tight">
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-foreground leading-tight tracking-tight mb-6">
             {t.sectors.title}
           </h2>
-          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="mt-4 text-xl text-gray-500 max-w-3xl mx-auto font-light leading-relaxed">
             {t.sectors.intro}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {sectorKeys.map((key, index) => {
             const Icon = sectorIcons[index];
             return (
               <div
                 key={key}
-                className="group relative overflow-hidden rounded-2xl border-[3px] border-gray-300/90 text-center hover:border-[#003DA5]/60 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
-                style={{
-                  backgroundImage: `url('${sectorImages[index]}')`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
+                className="group relative h-[400px] overflow-hidden rounded-3xl bg-gray-100 shadow-sm transition-all duration-500 hover:shadow-2xl hover:-translate-y-1"
               >
-                {/* Dark overlay for text readability */}
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors duration-300" />
+                {/* Background Image */}
+                <div
+                  className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
+                  style={{
+                    backgroundImage: `url('${sectorImages[index]}')`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                />
                 
-                <div className="relative p-8">
-                  <div className="flex items-center justify-center w-16 h-16 mx-auto mb-5 rounded-2xl bg-white/90 group-hover:bg-white transition-colors duration-300 shadow-lg">
-                    <Icon className="h-8 w-8 text-[#003DA5] group-hover:text-[#003DA5] transition-colors duration-300" />
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+                
+                {/* Content */}
+                <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                  <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-white/20 backdrop-blur-md text-white border border-white/30">
+                        <Icon className="h-6 w-6" />
+                      </div>
+                      <div className="h-px flex-1 bg-white/20" />
+                    </div>
+                    
+                    <h3 className="font-display text-3xl font-bold text-white mb-2 tracking-tight">
+                      {t.sectors[key]}
+                    </h3>
+                    
+                    <p className="text-white/80 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-2 group-hover:translate-y-0 delay-100">
+                      Découvrir les opportunités <span className="ml-1">→</span>
+                    </p>
                   </div>
-                  <h3 className="font-display text-xl font-bold text-white">
-                    {t.sectors[key]}
-                  </h3>
-                  <div className="mt-4 h-0.5 w-12 mx-auto bg-[#C5A55A] group-hover:w-20 transition-all duration-300" />
                 </div>
               </div>
             );

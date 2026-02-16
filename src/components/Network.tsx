@@ -26,29 +26,24 @@ export default function Network() {
   const { t, lang } = useLanguage();
 
   return (
-    <section id="network" className="relative py-24 bg-gradient-to-br from-[#001d4a] via-[#003DA5] to-[#001d4a] text-white">
-      <div className="absolute inset-0 opacity-5">
-        <svg width="100%" height="100%">
-          <pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse">
-            <circle cx="2" cy="2" r="1" fill="white" />
-          </pattern>
-          <rect width="100%" height="100%" fill="url(#dots)" />
-        </svg>
+    <section id="network" className="relative py-32 bg-foreground overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0">
+        <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-[#003DA5]/30 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-[#C5A55A]/20 rounded-full blur-[120px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 mb-4">
-            <div className="h-px w-8 bg-[#C5A55A]" />
-            <span className="text-[#C5A55A] text-sm font-semibold tracking-widest uppercase">
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center gap-2 mb-6">
+            <span className="px-3 py-1 rounded-full border border-white/20 bg-white/5 text-white/80 text-xs font-semibold tracking-widest uppercase backdrop-blur-md">
               {t.nav.network}
             </span>
-            <div className="h-px w-8 bg-[#C5A55A]" />
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-6">
             {t.network.title}
           </h2>
-          <p className="mt-4 text-lg text-blue-200/80 max-w-2xl mx-auto">
+          <p className="mt-4 text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
             {t.network.subtitle}
           </p>
         </div>
@@ -57,31 +52,33 @@ export default function Network() {
           {t.network.countries.map((country) => (
             <div
               key={country}
-              className="group flex items-center gap-3 bg-white/5 backdrop-blur-sm border-2 border-white/20 rounded-xl px-4 py-4 hover:bg-white/10 hover:border-[#C5A55A]/60 hover:shadow-lg transition-all duration-300"
+              className="group flex items-center gap-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl px-5 py-4 hover:bg-white/10 hover:border-[#C5A55A]/50 hover:scale-[1.02] transition-all duration-300"
             >
-              {countryFlags[country].startsWith('/') ? (
-                <img 
-                  src={countryFlags[country]} 
-                  alt={country}
-                  className="w-8 h-6 object-cover rounded-sm"
-                />
-              ) : (
-                <span className="text-2xl" role="img" aria-label={country}>
-                  {countryFlags[country] || "🌐"}
-                </span>
-              )}
-              <span className="text-sm font-medium text-white/90 group-hover:text-white">
+              <div className="shrink-0 transition-transform duration-300 group-hover:scale-110">
+                {countryFlags[country].startsWith('/') ? (
+                  <img 
+                    src={countryFlags[country]} 
+                    alt={country}
+                    className="w-8 h-auto rounded shadow-sm"
+                  />
+                ) : (
+                  <span className="text-2xl" role="img" aria-label={country}>
+                    {countryFlags[country] || "🌐"}
+                  </span>
+                )}
+              </div>
+              <span className="text-sm font-medium text-gray-200 group-hover:text-white transition-colors">
                 {country}
               </span>
             </div>
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <div className="inline-flex items-center gap-2 text-[#C5A55A]">
-            <MapPin className="h-5 w-5" />
-            <span className="font-semibold">15</span>
-            <span className="text-blue-200/60 text-sm">
+        <div className="mt-20 text-center">
+          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
+            <MapPin className="h-5 w-5 text-[#C5A55A]" />
+            <span className="text-2xl font-bold text-white">15</span>
+            <span className="text-gray-400 text-sm font-medium uppercase tracking-wide">
               {lang === "fr" ? "pays de représentation" : "countries represented"}
             </span>
           </div>

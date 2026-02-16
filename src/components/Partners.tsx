@@ -19,38 +19,33 @@ export default function Partners() {
   const { t } = useLanguage();
 
   return (
-    <section id="partners" className="relative py-24 bg-[#f0ebe5]">
+    <section id="partners" className="relative py-32 bg-[#f5f5f7]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 mb-4">
-            <div className="h-px w-8 bg-[#C5A55A]" />
-            <span className="text-[#C5A55A] text-sm font-semibold tracking-widest uppercase">
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center gap-2 mb-6">
+            <span className="px-3 py-1 rounded-full border border-[#C5A55A]/30 bg-[#C5A55A]/5 text-[#C5A55A] text-xs font-semibold tracking-widest uppercase">
               {t.nav.partners}
             </span>
-            <div className="h-px w-8 bg-[#C5A55A]" />
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-[#003DA5] leading-tight">
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-foreground leading-tight tracking-tight mb-6">
             {t.partners.title}
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-px bg-gray-200 rounded-2xl overflow-hidden shadow-sm border border-gray-200">
           {partners.map((partner) => (
             <a
               key={partner.name}
               href={partner.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex flex-col items-center justify-center p-8 rounded-2xl border-[3px] border-gray-300/90 bg-white hover:bg-gradient-to-br hover:from-white hover:to-blue-50/30 hover:shadow-2xl hover:border-[#003DA5]/50 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+              className="group relative flex flex-col items-center justify-center p-8 bg-white hover:bg-gray-50 transition-all duration-300 cursor-pointer"
             >
-              {/* Decorative corner accent */}
-              <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-[#C5A55A]/10 to-transparent rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              
-              <div className="relative h-24 w-full flex items-center justify-center mb-5">
+              <div className="relative h-20 w-full flex items-center justify-center mb-6">
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="max-h-full max-w-full object-contain filter grayscale-[30%] group-hover:grayscale-0 opacity-80 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"
+                  className="max-h-full max-w-full object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-110"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = "none";
@@ -58,12 +53,9 @@ export default function Partners() {
                 />
               </div>
               
-              <p className="text-sm text-center text-gray-700 group-hover:text-[#003DA5] font-semibold transition-colors leading-snug">
+              <p className="text-xs text-center text-gray-400 group-hover:text-[#003DA5] font-medium transition-colors duration-300">
                 {partner.name}
               </p>
-              
-              {/* Bottom accent line */}
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-1 w-0 bg-gradient-to-r from-[#003DA5] via-[#C5A55A] to-[#003DA5] group-hover:w-3/4 transition-all duration-500 rounded-t-full" />
             </a>
           ))}
         </div>

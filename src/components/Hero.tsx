@@ -9,70 +9,83 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background */}
-      <div className="absolute inset-0">
+      {/* Background with parallax effect */}
+      <div className="absolute inset-0 z-0">
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 scale-105"
           style={{
             backgroundImage: `url('/images/hero-bg.jpg')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#001d4a]/85 via-[#003DA5]/75 to-[#001d4a]/90" />
-        {/* Decorative pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <svg width="100%" height="100%">
-            <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" strokeWidth="0.5" />
-            </pattern>
-            <rect width="100%" height="100%" fill="url(#grid)" />
-          </svg>
-        </div>
+        {/* Premium gradient overlay - Cleaner and more cinematic */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
       </div>
 
-      {/* Gold accent line */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#C5A55A] to-transparent" />
-
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
-        <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-[#C5A55A]/40 bg-[#C5A55A]/10">
-          <span className="text-[#C5A55A] text-sm font-medium tracking-wide">
-            CCNE-RDC
-          </span>
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center h-full pt-20">
+        
+        {/* Badge - Apple style pill */}
+        <div className="opacity-0 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-md mb-8">
+            <span className="w-2 h-2 rounded-full bg-[#C5A55A] animate-pulse" />
+            <span className="text-white/90 text-sm font-medium tracking-wide uppercase">
+              Chambre de Commerce Nationale
+            </span>
+          </div>
         </div>
 
-        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight tracking-tight">
+        {/* Main Title - Impactful & Clean */}
+        <h1 
+          className="opacity-0 animate-fade-in-up font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight leading-[1.1] mb-8 max-w-5xl mx-auto drop-shadow-lg"
+          style={{ animationDelay: "0.3s" }}
+        >
           {t.hero.title}
         </h1>
 
-        <p className="mt-6 text-lg sm:text-xl text-blue-100/80 max-w-3xl mx-auto leading-relaxed">
+        {/* Subtitle - Readable & Elegant */}
+        <p 
+          className="opacity-0 animate-fade-in-up text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-12 font-light tracking-wide"
+          style={{ animationDelay: "0.5s" }}
+        >
           {t.hero.subtitle}
         </p>
 
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        {/* CTA Buttons - Apple style */}
+        <div 
+          className="opacity-0 animate-fade-in-up flex flex-col sm:flex-row items-center justify-center gap-6"
+          style={{ animationDelay: "0.7s" }}
+        >
           <a
             href="#why-invest"
-            className="group inline-flex items-center gap-2 rounded-lg bg-[#C5A55A] px-8 py-4 text-base font-semibold text-white shadow-xl transition-all hover:bg-[#b89545] hover:shadow-2xl hover:scale-[1.02]"
+            className="group relative inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white transition-all duration-300 bg-[#C5A55A] rounded-full hover:bg-[#d4b365] hover:scale-105 hover:shadow-[0_0_20px_rgba(197,165,90,0.3)] min-w-[200px]"
           >
-            {t.hero.cta1}
-            <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+            <span>{t.hero.cta1}</span>
+            <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
           </a>
+          
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 rounded-lg border-2 border-white/30 px-8 py-4 text-base font-semibold text-white transition-all hover:bg-white/10 hover:border-white/50"
+            className="group inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white transition-all duration-300 bg-white/10 backdrop-blur-md border border-white/20 rounded-full hover:bg-white/20 hover:scale-105 min-w-[200px]"
           >
             {t.hero.cta2}
           </a>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <a href="#about" aria-label="Scroll down">
-          <ChevronDown className="h-8 w-8 text-white/50" />
+      {/* Scroll indicator - Minimalist */}
+      <div 
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in-up"
+        style={{ animationDelay: "1.2s" }}
+      >
+        <a 
+          href="#about" 
+          aria-label="Scroll down"
+          className="flex flex-col items-center gap-2 text-white/50 hover:text-white transition-colors duration-300"
+        >
+          <span className="text-xs uppercase tracking-widest font-medium">Découvrir</span>
+          <ChevronDown className="h-6 w-6 animate-bounce" />
         </a>
       </div>
     </section>

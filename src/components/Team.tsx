@@ -6,17 +6,15 @@ export default function Team() {
   const { t } = useLanguage();
 
   return (
-    <section id="team" className="relative py-24 bg-[#F8F9FA]">
+    <section id="team" className="relative py-32 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 mb-4">
-            <div className="h-px w-8 bg-[#C5A55A]" />
-            <span className="text-[#C5A55A] text-sm font-semibold tracking-widest uppercase">
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center gap-2 mb-6">
+            <span className="px-3 py-1 rounded-full border border-[#C5A55A]/30 bg-[#C5A55A]/5 text-[#C5A55A] text-xs font-semibold tracking-widest uppercase">
               {t.nav.team}
             </span>
-            <div className="h-px w-8 bg-[#C5A55A]" />
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-[#003DA5] leading-tight">
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-foreground leading-tight tracking-tight mb-6">
             {t.team.title}
           </h2>
         </div>
@@ -25,40 +23,42 @@ export default function Team() {
           {t.team.members.map((member, index) => (
             <div
               key={index}
-              className={`group relative bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 ${
+              className={`group relative bg-gray-50 rounded-3xl overflow-hidden border border-gray-100 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 ${
                 index >= 3 ? "lg:col-span-1 sm:col-span-1" : ""
               }`}
             >
               {/* Photo */}
-              <div className="relative h-64 bg-gradient-to-br from-[#003DA5]/10 to-[#4A90D9]/10 overflow-hidden">
+              <div className="relative h-80 overflow-hidden bg-gray-200">
                 <img
                   src={member.photo}
                   alt={member.name}
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = "none";
                   }}
                 />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-24 h-24 rounded-full bg-[#003DA5]/10 flex items-center justify-center">
-                    <span className="text-[#003DA5] text-3xl font-display font-bold">
-                      {member.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
-                    </span>
-                  </div>
+                
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {/* Initial/Fallback if no image */}
+                <div className="absolute inset-0 flex items-center justify-center -z-10">
+                  <span className="text-gray-300 text-4xl font-display font-bold">
+                    {member.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
+                  </span>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#C5A55A] via-[#003DA5] to-[#C5A55A]" />
               </div>
 
               {/* Info */}
-              <div className="p-6">
-                <h3 className="font-display text-xl font-bold text-gray-900">
+              <div className="p-8">
+                <h3 className="font-display text-2xl font-bold text-gray-900 group-hover:text-[#003DA5] transition-colors">
                   {member.name}
                 </h3>
-                <p className="text-[#C5A55A] font-semibold text-sm mt-1">
+                <p className="text-[#C5A55A] font-medium text-sm mt-2 uppercase tracking-wide">
                   {member.role}
                 </p>
-                <p className="mt-4 text-gray-600 text-sm leading-relaxed">
+                <p className="mt-4 text-gray-500 text-base leading-relaxed line-clamp-3 group-hover:line-clamp-none transition-all duration-300">
                   {member.description}
                 </p>
               </div>

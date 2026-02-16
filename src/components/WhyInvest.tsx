@@ -16,46 +16,60 @@ export default function WhyInvest() {
   ];
 
   return (
-    <section id="why-invest" className="relative py-24 bg-[#e8e3dd]">
+    <section id="why-invest" className="relative py-32 bg-[#f5f5f7]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 mb-4">
-            <div className="h-px w-8 bg-[#C5A55A]" />
-            <span className="text-[#C5A55A] text-sm font-semibold tracking-widest uppercase">
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center gap-2 mb-6">
+            <span className="px-3 py-1 rounded-full border border-[#C5A55A]/30 bg-[#C5A55A]/5 text-[#C5A55A] text-xs font-semibold tracking-widest uppercase">
               {t.nav.whyDRC}
             </span>
-            <div className="h-px w-8 bg-[#C5A55A]" />
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-[#003DA5] leading-tight">
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-foreground leading-tight tracking-tight mb-6">
             {t.whyInvest.title}
           </h2>
         </div>
 
-        {/* Cards grid */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 auto-rows-[minmax(300px,auto)]">
           {cards.map((card, index) => {
             const Icon = icons[index];
+            // Bento layout logic: First and last cards span 2 columns
+            const isWide = index === 0 || index === 3;
+            
             return (
               <div
                 key={index}
-                className="group relative bg-white rounded-2xl p-8 border-[3px] border-gray-300/90 shadow-lg hover:shadow-2xl hover:border-[#003DA5]/50 hover:-translate-y-1 transition-all duration-300"
+                className={`group relative overflow-hidden bg-white rounded-3xl p-8 sm:p-10 border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 ${
+                  isWide ? "md:col-span-2" : "md:col-span-1"
+                }`}
               >
-                <div className="flex items-start gap-5">
-                  <div className="flex-shrink-0 flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-[#003DA5] to-[#4A90D9] text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <Icon className="h-7 w-7" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="font-display text-xl font-bold text-gray-900 mb-3">
+                <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
+                  <Icon className="w-32 h-32 -mr-8 -mt-8 rotate-12" />
+                </div>
+
+                <div className="relative z-10 h-full flex flex-col justify-between">
+                  <div>
+                    <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-[#003DA5]/5 text-[#003DA5] mb-6 group-hover:scale-110 transition-transform duration-500">
+                      <Icon className="h-7 w-7" />
+                    </div>
+                    
+                    <h3 className="font-display text-2xl font-bold text-foreground mb-4 group-hover:text-[#003DA5] transition-colors">
                       {card.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    
+                    <p className="text-gray-500 text-lg leading-relaxed font-light">
                       {card.text}
                     </p>
                   </div>
+
+                  <div className="mt-8 flex items-center text-[#C5A55A] font-medium opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                    <span className="text-sm uppercase tracking-wide">En savoir plus</span>
+                    <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
                 </div>
-                {/* Bottom accent */}
-                <div className="absolute bottom-0 left-8 right-8 h-0.5 bg-gradient-to-r from-[#C5A55A] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             );
           })}

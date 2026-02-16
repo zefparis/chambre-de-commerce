@@ -32,56 +32,56 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="relative py-24 bg-white">
+    <section id="contact" className="relative py-32 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 mb-4">
-            <div className="h-px w-8 bg-[#C5A55A]" />
-            <span className="text-[#C5A55A] text-sm font-semibold tracking-widest uppercase">
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center gap-2 mb-6">
+            <span className="px-3 py-1 rounded-full border border-[#C5A55A]/30 bg-[#C5A55A]/5 text-[#C5A55A] text-xs font-semibold tracking-widest uppercase">
               {t.nav.contact}
             </span>
-            <div className="h-px w-8 bg-[#C5A55A]" />
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-[#003DA5] leading-tight">
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-foreground leading-tight tracking-tight mb-6">
             {t.contact.title}
           </h2>
-          <p className="mt-4 text-lg text-gray-600">
+          <p className="mt-4 text-xl text-gray-500 max-w-2xl mx-auto font-light leading-relaxed">
             {t.contact.subtitle}
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-5 gap-12">
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
           {/* Contact info */}
-          <div className="lg:col-span-2 space-y-6">
-            {contactInfo.map((item) => {
-              const Icon = item.icon;
-              return (
-                <div key={item.label} className="flex items-start gap-4">
-                  <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-xl bg-[#003DA5]/5">
-                    <Icon className="h-5 w-5 text-[#003DA5]" />
+          <div className="lg:col-span-2 flex flex-col justify-between h-full">
+            <div className="space-y-8">
+              {contactInfo.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.label} className="group flex items-start gap-6 p-6 rounded-3xl bg-gray-50 border border-gray-100 hover:bg-white hover:shadow-lg hover:border-transparent transition-all duration-300">
+                    <div className="shrink-0 flex items-center justify-center w-12 h-12 rounded-2xl bg-[#003DA5]/5 text-[#003DA5] group-hover:scale-110 transition-transform duration-300">
+                      <Icon className="h-6 w-6" />
+                    </div>
+                    <div className="flex-1 pt-1">
+                      {item.href ? (
+                        <a
+                          href={item.href}
+                          className="text-gray-600 hover:text-[#003DA5] transition-colors text-base font-medium leading-relaxed block"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {item.label}
+                        </a>
+                      ) : (
+                        <p className="text-gray-600 text-base font-medium leading-relaxed">
+                          {item.label}
+                        </p>
+                      )}
+                    </div>
                   </div>
-                  <div className="flex-1 pt-2">
-                    {item.href ? (
-                      <a
-                        href={item.href}
-                        className="text-gray-700 hover:text-[#003DA5] transition-colors text-sm leading-relaxed"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {item.label}
-                      </a>
-                    ) : (
-                      <p className="text-gray-700 text-sm leading-relaxed">
-                        {item.label}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
 
-            {/* Map embed */}
-            <div className="mt-8 rounded-2xl overflow-hidden border border-gray-100 shadow-sm h-56">
+            {/* Map embed - Styled */}
+            <div className="mt-8 rounded-3xl overflow-hidden border border-gray-200 shadow-sm h-64 relative group">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15915.5!2d15.3!3d-4.32!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a6a3130a1a3e8c1%3A0x5e3f8e51c5b5a3e!2sLingwala%2C%20Kinshasa!5e0!3m2!1sfr!2scd!4v1700000000000!5m2!1sfr!2scd"
                 width="100%"
@@ -91,16 +91,17 @@ export default function Contact() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="CCNE-RDC Location"
+                className="grayscale group-hover:grayscale-0 transition-all duration-500"
               />
             </div>
           </div>
 
-          {/* Contact form */}
+          {/* Contact form - Apple style inputs */}
           <div className="lg:col-span-3">
-            <form onSubmit={handleSubmit} className="bg-[#F8F9FA] rounded-2xl p-8 border border-gray-100">
-              <div className="grid sm:grid-cols-2 gap-5">
+            <form onSubmit={handleSubmit} className="bg-gray-50 rounded-[2.5rem] p-8 sm:p-12 border border-gray-100 shadow-sm">
+              <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5">
+                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2 ml-1">
                     {t.contact.form.name}
                   </label>
                   <input
@@ -110,11 +111,12 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-[#003DA5] focus:ring-2 focus:ring-[#003DA5]/20 outline-none transition-all"
+                    className="w-full rounded-2xl border-0 bg-white px-5 py-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#003DA5] text-base transition-all duration-200"
+                    placeholder="John Doe"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5">
+                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2 ml-1">
                     {t.contact.form.email}
                   </label>
                   <input
@@ -124,11 +126,12 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-[#003DA5] focus:ring-2 focus:ring-[#003DA5]/20 outline-none transition-all"
+                    className="w-full rounded-2xl border-0 bg-white px-5 py-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#003DA5] text-base transition-all duration-200"
+                    placeholder="john@example.com"
                   />
                 </div>
                 <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1.5">
+                  <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-2 ml-1">
                     {t.contact.form.company}
                   </label>
                   <input
@@ -137,11 +140,12 @@ export default function Contact() {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-[#003DA5] focus:ring-2 focus:ring-[#003DA5]/20 outline-none transition-all"
+                    className="w-full rounded-2xl border-0 bg-white px-5 py-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#003DA5] text-base transition-all duration-200"
+                    placeholder="Entreprise Ltd"
                   />
                 </div>
                 <div>
-                  <label htmlFor="country" className="block text-sm font-medium text-gray-700 mb-1.5">
+                  <label htmlFor="country" className="block text-sm font-semibold text-gray-700 mb-2 ml-1">
                     {t.contact.form.country}
                   </label>
                   <input
@@ -150,11 +154,12 @@ export default function Contact() {
                     name="country"
                     value={formData.country}
                     onChange={handleChange}
-                    className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-[#003DA5] focus:ring-2 focus:ring-[#003DA5]/20 outline-none transition-all"
+                    className="w-full rounded-2xl border-0 bg-white px-5 py-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#003DA5] text-base transition-all duration-200"
+                    placeholder="République Démocratique du Congo"
                   />
                 </div>
                 <div className="sm:col-span-2">
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1.5">
+                  <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2 ml-1">
                     {t.contact.form.subject}
                   </label>
                   <input
@@ -164,11 +169,12 @@ export default function Contact() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-[#003DA5] focus:ring-2 focus:ring-[#003DA5]/20 outline-none transition-all"
+                    className="w-full rounded-2xl border-0 bg-white px-5 py-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#003DA5] text-base transition-all duration-200"
+                    placeholder="Demande de partenariat"
                   />
                 </div>
                 <div className="sm:col-span-2">
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1.5">
+                  <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2 ml-1">
                     {t.contact.form.message}
                   </label>
                   <textarea
@@ -178,17 +184,20 @@ export default function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    className="w-full rounded-lg border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-[#003DA5] focus:ring-2 focus:ring-[#003DA5]/20 outline-none transition-all resize-none"
+                    className="w-full rounded-2xl border-0 bg-white px-5 py-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-200 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#003DA5] text-base transition-all duration-200 resize-none"
+                    placeholder="Votre message..."
                   />
                 </div>
               </div>
-              <button
-                type="submit"
-                className="mt-6 inline-flex items-center gap-2 rounded-lg bg-[#003DA5] px-8 py-3.5 text-sm font-semibold text-white shadow-lg hover:bg-[#002d7a] hover:shadow-xl transition-all"
-              >
-                <Send className="h-4 w-4" />
-                {t.contact.form.send}
-              </button>
+              <div className="mt-8 flex justify-end">
+                <button
+                  type="submit"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#003DA5] px-8 py-4 text-base font-bold text-white shadow-lg hover:bg-[#002d7a] hover:shadow-xl hover:scale-105 transition-all duration-300"
+                >
+                  <Send className="h-5 w-5" />
+                  {t.contact.form.send}
+                </button>
+              </div>
             </form>
           </div>
         </div>
