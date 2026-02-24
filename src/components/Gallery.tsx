@@ -61,7 +61,7 @@ export default function Gallery() {
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight tracking-tight mb-4">
             {t.gallery.title}
           </h2>
-          <p className="mt-4 text-xl text-gray-500 max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="mt-3 text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             {t.gallery.subtitle}
           </p>
         </div>

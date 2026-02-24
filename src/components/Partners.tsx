@@ -53,7 +53,7 @@ export default function Partners() {
                 />
               </div>
               
-              <p className="text-xs text-center text-gray-400 group-hover:text-[#003DA5] font-medium transition-colors duration-300">
+              <p className="text-xs text-center text-gray-600 group-hover:text-[#003DA5] font-medium transition-colors duration-300">
                 {partner.name}
               </p>
             </a>

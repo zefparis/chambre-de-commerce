@@ -58,7 +58,7 @@ export default function WhyInvest() {
                       {card.title}
                     </h3>
                     
-                    <p className="text-gray-500 text-lg leading-relaxed font-light">
+                    <p className="text-gray-700 text-base leading-relaxed">
                       {card.text}
                     </p>
                   </div>

@@ -62,7 +62,7 @@ export default function Events() {
                   {event.name}
                 </h3>
                 
-                <p className="text-gray-500 text-base leading-relaxed mb-6">
+                <p className="text-gray-700 text-sm leading-relaxed mb-4">
                   {event.description}
                 </p>
 

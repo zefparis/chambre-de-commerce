@@ -58,7 +58,7 @@ export default function Team() {
                 <p className="text-[#C5A55A] font-medium text-sm mt-2 uppercase tracking-wide">
                   {member.role}
                 </p>
-                <p className="mt-4 text-gray-500 text-base leading-relaxed line-clamp-3 group-hover:line-clamp-none transition-all duration-300">
+                <p className="mt-3 text-gray-700 text-sm leading-relaxed line-clamp-3 group-hover:line-clamp-none transition-all duration-300">
                   {member.description}
                 </p>
               </div>

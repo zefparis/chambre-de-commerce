@@ -29,7 +29,7 @@ export default function Sectors() {
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight tracking-tight mb-4">
             {t.sectors.title}
           </h2>
-          <p className="mt-4 text-xl text-gray-500 max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="mt-3 text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
             {t.sectors.intro}
           </p>
         </div>

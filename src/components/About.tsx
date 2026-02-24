@@ -33,7 +33,7 @@ export default function About() {
           {/* Main text */}
           <div className="space-y-8">
             <div className="prose prose-lg prose-gray max-w-none">
-              <p className="text-xl text-gray-500 font-light leading-relaxed">
+              <p className="text-lg text-gray-700 leading-relaxed">
                 {t.about.text}
               </p>
             </div>
@@ -82,7 +82,7 @@ export default function About() {
                 </div>
               </div>
               
-              <p className="text-gray-600 text-lg leading-relaxed mb-8">
+              <p className="text-gray-700 text-base leading-relaxed mb-8">
                 {t.about.roleText}
               </p>
               
