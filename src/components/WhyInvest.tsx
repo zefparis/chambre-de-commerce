@@ -31,7 +31,7 @@ export default function WhyInvest() {
         </div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 auto-rows-[minmax(240px,auto)]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6">
           {cards.map((card, index) => {
             const Icon = icons[index];
             // Bento layout logic: First and last cards span 2 columns
@@ -40,35 +40,22 @@ export default function WhyInvest() {
             return (
               <div
                 key={index}
-                className={`group relative overflow-hidden bg-white rounded-3xl p-8 sm:p-10 border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 ${
+                className={`group relative overflow-hidden bg-white rounded-2xl p-6 sm:p-8 border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 ${
                   isWide ? "md:col-span-2" : "md:col-span-1"
                 }`}
               >
-                <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
-                  <Icon className="w-32 h-32 -mr-8 -mt-8 rotate-12" />
-                </div>
-
-                <div className="relative z-10 h-full flex flex-col justify-between">
-                  <div>
-                    <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-[#003DA5]/5 text-[#003DA5] mb-6 group-hover:scale-110 transition-transform duration-500">
-                      <Icon className="h-7 w-7" />
-                    </div>
-                    
-                    <h3 className="font-display text-2xl font-bold text-foreground mb-4 group-hover:text-[#003DA5] transition-colors">
-                      {card.title}
-                    </h3>
-                    
-                    <p className="text-gray-700 text-base leading-relaxed">
-                      {card.text}
-                    </p>
+                <div className="flex flex-col gap-4">
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#003DA5]/5 text-[#003DA5] group-hover:scale-110 transition-transform duration-500">
+                    <Icon className="h-6 w-6" />
                   </div>
-
-                  <div className="mt-8 flex items-center text-[#C5A55A] font-medium opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                    <span className="text-sm uppercase tracking-wide">En savoir plus</span>
-                    <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </div>
+                  
+                  <h3 className="font-display text-xl font-bold text-foreground group-hover:text-[#003DA5] transition-colors">
+                    {card.title}
+                  </h3>
+                  
+                  <p className="text-gray-700 text-sm leading-relaxed">
+                    {card.text}
+                  </p>
                 </div>
               </div>
             );

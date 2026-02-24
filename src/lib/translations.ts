@@ -14,38 +14,38 @@ export const translations = {
       cta: "Nous contacter",
     },
     hero: {
-      title: "Pour des Investissements prometteurs en République Démocratique du Congo",
+      title: "La RDC : votre prochaine grande opportunité d'investissement",
       subtitle:
-        "La Chambre de Commerce Nationale et de l'Économie — Votre partenaire pour investir en RDC",
+        "Accédez à un marché de 100 millions de consommateurs, des ressources stratégiques uniques au monde et un accompagnement sécurisé par la Chambre de Commerce Nationale.",
       cta1: "Découvrir les opportunités",
       cta2: "Nous contacter",
     },
     about: {
-      title: "Investir en RDC, c'est maintenant !",
-      text: "Placée sous la tutelle du Ministère du Commerce Extérieur et du département de la promotion auprès du Secrétariat Général du Ministère du Commerce Extérieur, la Chambre de Commerce Nationale et de l'Économie est l'institution publique chargée d'amélioration des climats d'affaires et de faciliter l'investissement en RDC. En tant qu'interface privilégiée entre le secteur privé et les pouvoirs publics, la CCNE accompagne les investisseurs dans toutes les étapes de la création de leurs projets.",
-      roleTitle: "Notre rôle",
+      title: "Votre partenaire officiel pour investir en RDC",
+      text: "La Chambre de Commerce Nationale et de l'Économie (CCNE-RDC) est l'institution publique de référence placée sous la tutelle du Ministère du Commerce Extérieur. Notre mission : vous ouvrir les portes de la RDC en toute sécurité. Nous sommes l'interface directe entre vous et les autorités congolaises — chaque démarche administrative, juridique et fiscale est prise en charge pour que vous puissiez vous concentrer sur votre projet.",
+      roleTitle: "Pourquoi passer par la CCNE ?",
       roleText:
-        "Notre rôle s'articule autour de plusieurs axes : promouvoir les opportunités d'investissement, assurer la promotion de la potentialité économique et commerciale, améliorer le climat des affaires grâce à des réformes, accompagner les investisseurs dans leurs démarches et conseiller les autorités sur la politique d'investissement.",
+        "Investir dans un nouveau pays peut être complexe. La CCNE-RDC élimine cette complexité : nous sécurisons vos démarches légales, nous vous connectons aux bons interlocuteurs gouvernementaux, nous identifions les meilleures opportunités dans votre secteur et nous vous accompagnons de A à Z. Avec nous, vous investissez en toute confiance, en toute légalité, et avec un retour sur investissement maximisé.",
     },
     whyInvest: {
       title: "Pourquoi investir en RDC ?",
-      card1Title: "Des marchés riches et en croissance",
+      card1Title: "Un marché à 100 millions de consommateurs",
       card1Text:
-        "La RDC regorge de ressources stratégiques (cobalt, cuivre, lithium) et d'un marché de plus de 100 millions d'habitants, offrant d'énormes opportunités d'investissement.",
-      card2Title: "Une position géostratégique clé",
+        "Cobalt, cuivre, lithium, or, diamant — la RDC détient 70 % des réserves mondiales de coltan et des richesses minières colossales. Ajoutez à cela un marché intérieur en pleine explosion démographique : c'est le moment d'y être avant tout le monde.",
+      card2Title: "Au cœur de l'Afrique, au cœur des affaires",
       card2Text:
-        "Située au cœur de l'Afrique, la RDC donne un accès privilégié aux marchés régionaux grâce à ses infrastructures et à son réseau commercial.",
-      card3Title: "Accompagnement des investisseurs",
+        "Frontalière de 9 pays, la RDC est la porte d'entrée vers l'Afrique australe, centrale et orientale. Un positionnement géographique unique qui vous donne accès à plus de 300 millions de consommateurs dans la sous-région.",
+      card3Title: "Zéro risque administratif avec la CCNE",
       card3Text:
-        "La CCNE-RDC facilite l'implantation des entreprises en RDC en orientant les investisseurs à travers les différentes démarches administratives, juridiques et autres. Elle fournit des informations détaillées sur les opportunités d'investissements et les avantages fiscaux disponibles en RDC.",
-      card4Title: "Amélioration du climat des affaires",
+        "Fini les incertitudes : la CCNE-RDC prend en charge toutes vos démarches administratives, juridiques et fiscales. Nous vous guidons étape par étape, de l'étude de marché jusqu'à l'implantation effective. Vous bénéficiez d'un accompagnement sur mesure et d'un accès direct aux avantages fiscaux réservés aux investisseurs.",
+      card4Title: "Un environnement des affaires en pleine transformation",
       card4Text:
-        "La CCNE-RDC a pour rôle de faire la médiation entre les investisseurs et les institutions gouvernementales, pour identifier et lever les obstacles à l'investissement. La CCNE-RDC met en place des réformes visant l'amélioration et la transparence, simplifier les procédures et rendre l'environnement des affaires plus attractif.",
+        "La RDC modernise activement son cadre réglementaire pour attirer les investisseurs internationaux. La CCNE-RDC est au cœur de cette transformation : nous faisons le pont entre vous et les institutions, nous levons les obstacles bureaucratiques et nous garantissons la transparence de chaque étape de votre investissement.",
     },
     sectors: {
       title: "Domaines d'intervention",
       intro:
-        "Nous couvrons des secteurs clés pour diversifier l'économie et favoriser une croissance durable et inclusive.",
+        "Des secteurs à fort potentiel de rentabilité, encore largement sous-exploités. La CCNE-RDC vous accompagne pour saisir ces opportunités avant la concurrence.",
       agriculture: "Agriculture",
       mining: "Mines",
       energy: "Énergie",
@@ -146,7 +146,7 @@ export const translations = {
     },
     contact: {
       title: "Contactez-nous",
-      subtitle: "Nous sommes à votre disposition",
+      subtitle: "Prêt à investir ? Parlons de votre projet. Notre équipe vous répond sous 48h.",
       form: {
         name: "Nom complet",
         email: "Email",
@@ -177,38 +177,38 @@ export const translations = {
       cta: "Contact us",
     },
     hero: {
-      title: "Promising Investments in the Democratic Republic of Congo",
+      title: "The DRC: Your Next Big Investment Opportunity",
       subtitle:
-        "The National Chamber of Commerce and Economy — Your partner for investing in the DRC",
+        "Access a market of 100 million consumers, world-class strategic resources, and secure guidance from the National Chamber of Commerce.",
       cta1: "Discover opportunities",
       cta2: "Contact us",
     },
     about: {
-      title: "Invest in the DRC — Now is the time!",
-      text: "Under the authority of the Ministry of Foreign Trade and the promotion department of the Secretary General of the Ministry of Foreign Trade, the National Chamber of Commerce and Economy is the public institution responsible for improving the business climate and facilitating investment in the DRC. As a privileged interface between the private sector and public authorities, the CCNE supports investors through every stage of their project development.",
-      roleTitle: "Our role",
+      title: "Your Official Partner for Investing in the DRC",
+      text: "The National Chamber of Commerce and Economy (CCNE-RDC) is the leading public institution operating under the Ministry of Foreign Trade. Our mission: to open the doors of the DRC for you — safely and legally. We serve as your direct interface with Congolese authorities, handling every administrative, legal, and tax procedure so you can focus entirely on your project.",
+      roleTitle: "Why go through the CCNE?",
       roleText:
-        "Our role is built around several key areas: promoting investment opportunities, ensuring the promotion of economic and commercial potential, improving the business climate through reforms, supporting investors in their procedures, and advising authorities on investment policy.",
+        "Investing in a new country can be complex. The CCNE-RDC eliminates that complexity: we secure your legal procedures, connect you with the right government contacts, identify the best opportunities in your sector, and support you from start to finish. With us, you invest with full confidence, full legality, and maximized returns.",
     },
     whyInvest: {
-      title: "Why invest in the DRC?",
-      card1Title: "Rich and growing markets",
+      title: "Why Invest in the DRC?",
+      card1Title: "A Market of 100 Million Consumers",
       card1Text:
-        "The DRC is abundant in strategic resources (cobalt, copper, lithium) and has a market of over 100 million inhabitants, offering enormous investment opportunities.",
-      card2Title: "A key geostrategic position",
+        "Cobalt, copper, lithium, gold, diamonds — the DRC holds 70% of the world's coltan reserves and colossal mineral wealth. Add a booming domestic market with explosive demographic growth: now is the time to be there before everyone else.",
+      card2Title: "Heart of Africa, Heart of Business",
       card2Text:
-        "Located in the heart of Africa, the DRC provides privileged access to regional markets through its infrastructure and commercial network.",
-      card3Title: "Investor support",
+        "Bordering 9 countries, the DRC is the gateway to Southern, Central, and Eastern Africa. A unique geographic position giving you access to over 300 million consumers in the sub-region.",
+      card3Title: "Zero Administrative Risk with the CCNE",
       card3Text:
-        "The CCNE-RDC facilitates the establishment of businesses in the DRC by guiding investors through various administrative, legal, and other procedures. It provides detailed information on investment opportunities and tax advantages available in the DRC.",
-      card4Title: "Business climate improvement",
+        "No more uncertainty: the CCNE-RDC handles all your administrative, legal, and tax procedures. We guide you step by step, from market research to actual establishment. You benefit from tailored support and direct access to tax incentives reserved for investors.",
+      card4Title: "A Business Environment in Full Transformation",
       card4Text:
-        "The CCNE-RDC acts as a mediator between investors and government institutions to identify and remove barriers to investment. It implements reforms aimed at improving transparency, simplifying procedures, and making the business environment more attractive.",
+        "The DRC is actively modernizing its regulatory framework to attract international investors. The CCNE-RDC is at the heart of this transformation: we bridge the gap between you and institutions, remove bureaucratic obstacles, and guarantee transparency at every stage of your investment.",
     },
     sectors: {
       title: "Sectors of Intervention",
       intro:
-        "We cover key sectors to diversify the economy and promote sustainable and inclusive growth.",
+        "High-return sectors that are still largely untapped. The CCNE-RDC supports you in seizing these opportunities before the competition.",
       agriculture: "Agriculture",
       mining: "Mining",
       energy: "Energy",
@@ -309,7 +309,7 @@ export const translations = {
     },
     contact: {
       title: "Contact Us",
-      subtitle: "We are at your service",
+      subtitle: "Ready to invest? Let's talk about your project. Our team responds within 48 hours.",
       form: {
         name: "Full name",
         email: "Email",
