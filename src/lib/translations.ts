@@ -126,7 +126,8 @@ export const translations = {
           location: "Istanbul, Turquie",
           description:
             "Panel Conférence — Découvrir les opportunités des investissements en RDC. Stand de la RD Congo. En partenariat avec TABA (Turkish African Business Association) et Brandsbridge.",
-          image: "/images/events/afex-2025.jpg",
+          image: "/images/events/afex.png",
+          videoUrl: "https://youtu.be/YJTSDxXIiUQ",
         },
         {
           name: "Salon de l'Industrie Alimentaire en Turquie",
@@ -134,7 +135,8 @@ export const translations = {
           location: "Istanbul, Turquie",
           description:
             "Participation au salon de l'industrie alimentaire — Agrobusiness et opportunités commerciales.",
-          image: "/images/events/salon-alimentaire-2025.jpg",
+          image: "/images/events/afex1.png",
+          videoUrl: "https://youtu.be/OxxUF2_vGVE",
         },
       ],
     },
@@ -287,7 +289,8 @@ export const translations = {
           location: "Istanbul, Turkey",
           description:
             "Panel Conference — Discover investment opportunities in the DRC. DR Congo exhibition stand. In partnership with TABA (Turkish African Business Association) and Brandsbridge.",
-          image: "/images/events/afex-2025.jpg",
+          image: "/images/events/afex.png",
+          videoUrl: "https://youtu.be/YJTSDxXIiUQ",
         },
         {
           name: "Food Industry Exhibition in Turkey",
@@ -295,7 +298,8 @@ export const translations = {
           location: "Istanbul, Turkey",
           description:
             "Participation in the food industry exhibition — Agribusiness and commercial opportunities.",
-          image: "/images/events/salon-alimentaire-2025.jpg",
+          image: "/images/events/afex1.png",
+          videoUrl: "https://youtu.be/OxxUF2_vGVE",
         },
       ],
     },

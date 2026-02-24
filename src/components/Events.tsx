@@ -1,7 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/hooks/useLanguage";
-import { Calendar, MapPin } from "lucide-react";
+import { Calendar, MapPin, Play } from "lucide-react";
 
 export default function Events() {
   const { t } = useLanguage();
@@ -66,10 +66,16 @@ export default function Events() {
                   {event.description}
                 </p>
 
-                <div className="flex items-center text-[#003DA5] font-semibold text-sm group/btn">
-                  <span className="group-hover/btn:underline decoration-2 underline-offset-4 transition-all">En savoir plus</span>
-                  <span className="ml-2 transform group-hover/btn:translate-x-1 transition-transform">→</span>
-                </div>
+                <a
+                  href={event.videoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-[#003DA5] font-semibold text-sm hover:underline decoration-2 underline-offset-4 transition-all"
+                >
+                  <Play className="h-4 w-4" />
+                  <span>Voir la vidéo</span>
+                  <span className="ml-1">→</span>
+                </a>
               </div>
             </div>
           ))}
