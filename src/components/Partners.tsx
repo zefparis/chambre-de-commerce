@@ -32,20 +32,20 @@ export default function Partners() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-px bg-gray-200 rounded-2xl overflow-hidden shadow-sm border border-gray-200">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
           {partners.map((partner) => (
             <a
               key={partner.name}
               href={partner.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex flex-col items-center justify-center p-8 bg-white hover:bg-gray-50 transition-all duration-300 cursor-pointer"
+              className="group flex flex-col items-center justify-center gap-3 p-5 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="relative h-20 w-full flex items-center justify-center mb-6">
+              <div className="h-14 w-full flex items-center justify-center">
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="max-h-full max-w-full object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:scale-110"
+                  className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = "none";
@@ -53,7 +53,7 @@ export default function Partners() {
                 />
               </div>
               
-              <p className="text-xs text-center text-gray-600 group-hover:text-[#003DA5] font-medium transition-colors duration-300">
+              <p className="text-xs text-center text-gray-700 group-hover:text-[#003DA5] font-medium leading-tight transition-colors duration-300">
                 {partner.name}
               </p>
             </a>

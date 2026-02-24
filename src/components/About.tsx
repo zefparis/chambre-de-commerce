@@ -38,28 +38,30 @@ export default function About() {
               </p>
             </div>
             
-            <div className="pt-8 border-t border-gray-200">
-              <h4 className="text-sm font-bold text-gray-900 uppercase tracking-widest mb-6">
+            <div className="pt-6 border-t border-gray-200">
+              <h4 className="text-sm font-bold text-gray-900 uppercase tracking-widest mb-4">
                 Sous la tutelle de
               </h4>
-              <div className="flex flex-wrap gap-8 items-center">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {ministerLogos.map((logo) => (
                   <div
                     key={logo.alt}
-                    className="group relative h-12 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+                    className="group flex flex-col items-center gap-2 p-3 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
                   >
-                    <img
-                      src={logo.src}
-                      alt={logo.alt}
-                      className="h-full w-auto object-contain"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = "none";
-                      }}
-                    />
-                    <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-max max-w-[200px] bg-black/80 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                      {logo.alt}
+                    <div className="h-10 flex items-center justify-center">
+                      <img
+                        src={logo.src}
+                        alt={logo.alt}
+                        className="max-h-full w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = "none";
+                        }}
+                      />
                     </div>
+                    <p className="text-[10px] text-center text-gray-600 font-medium leading-tight">
+                      {logo.alt}
+                    </p>
                   </div>
                 ))}
               </div>
