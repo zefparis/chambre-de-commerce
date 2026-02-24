@@ -6,6 +6,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import WhyInvest from "@/components/WhyInvest";
 import Sectors from "@/components/Sectors";
+import VideoPresentation from "@/components/VideoPresentation";
 import Team from "@/components/Team";
 import Network from "@/components/Network";
 import Partners from "@/components/Partners";
@@ -23,6 +24,7 @@ export default function Home() {
         <About />
         <WhyInvest />
         <Sectors />
+        <VideoPresentation />
         <Team />
         <Network />
         <Partners />
