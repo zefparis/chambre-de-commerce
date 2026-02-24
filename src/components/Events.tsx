@@ -7,27 +7,27 @@ export default function Events() {
   const { t } = useLanguage();
 
   return (
-    <section id="events" className="relative py-32 bg-gray-50">
+    <section id="events" className="relative py-16 md:py-20 bg-gray-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
+        <div className="text-center mb-10 md:mb-12">
           <div className="inline-flex items-center gap-2 mb-6">
             <span className="px-3 py-1 rounded-full border border-[#C5A55A]/30 bg-[#C5A55A]/5 text-[#C5A55A] text-xs font-semibold tracking-widest uppercase">
               {t.nav.events}
             </span>
           </div>
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-foreground leading-tight tracking-tight mb-6">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight tracking-tight mb-4">
             {t.events.title}
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid md:grid-cols-2 gap-5 lg:gap-6">
           {t.events.items.map((event, index) => (
             <div
               key={index}
               className="group relative bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 border border-gray-100"
             >
               {/* Event image */}
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-52 overflow-hidden">
                 <img
                   src={event.image}
                   alt={event.name}
@@ -50,7 +50,7 @@ export default function Events() {
               </div>
 
               {/* Event content */}
-              <div className="p-8">
+              <div className="p-6">
                 <div className="flex items-start justify-between gap-4 mb-4">
                   <div className="flex items-center gap-2 text-[#C5A55A] bg-[#C5A55A]/5 px-3 py-1 rounded-full">
                     <MapPin className="h-3.5 w-3.5" />

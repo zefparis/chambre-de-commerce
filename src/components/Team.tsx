@@ -6,20 +6,20 @@ export default function Team() {
   const { t } = useLanguage();
 
   return (
-    <section id="team" className="relative py-32 bg-white">
+    <section id="team" className="relative py-16 md:py-20 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
+        <div className="text-center mb-10 md:mb-12">
           <div className="inline-flex items-center gap-2 mb-6">
             <span className="px-3 py-1 rounded-full border border-[#C5A55A]/30 bg-[#C5A55A]/5 text-[#C5A55A] text-xs font-semibold tracking-widest uppercase">
               {t.nav.team}
             </span>
           </div>
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-foreground leading-tight tracking-tight mb-6">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight tracking-tight mb-4">
             {t.team.title}
           </h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {t.team.members.map((member, index) => (
             <div
               key={index}
@@ -28,7 +28,7 @@ export default function Team() {
               }`}
             >
               {/* Photo */}
-              <div className="relative h-80 overflow-hidden bg-gray-200">
+              <div className="relative h-64 overflow-hidden bg-gray-200">
                 <img
                   src={member.photo}
                   alt={member.name}
@@ -51,7 +51,7 @@ export default function Team() {
               </div>
 
               {/* Info */}
-              <div className="p-8">
+              <div className="p-6">
                 <h3 className="font-display text-2xl font-bold text-gray-900 group-hover:text-[#003DA5] transition-colors">
                   {member.name}
                 </h3>

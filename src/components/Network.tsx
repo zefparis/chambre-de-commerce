@@ -26,7 +26,7 @@ export default function Network() {
   const { t, lang } = useLanguage();
 
   return (
-    <section id="network" className="relative py-32 bg-foreground overflow-hidden">
+    <section id="network" className="relative py-16 md:py-20 bg-foreground overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] bg-[#003DA5]/30 rounded-full blur-[120px]" />
@@ -34,13 +34,13 @@ export default function Network() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
+        <div className="text-center mb-10 md:mb-12">
           <div className="inline-flex items-center gap-2 mb-6">
             <span className="px-3 py-1 rounded-full border border-white/20 bg-white/5 text-white/80 text-xs font-semibold tracking-widest uppercase backdrop-blur-md">
               {t.nav.network}
             </span>
           </div>
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight tracking-tight mb-6">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight tracking-tight mb-4">
             {t.network.title}
           </h2>
           <p className="mt-4 text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
@@ -74,7 +74,7 @@ export default function Network() {
           ))}
         </div>
 
-        <div className="mt-20 text-center">
+        <div className="mt-12 text-center">
           <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
             <MapPin className="h-5 w-5 text-[#C5A55A]" />
             <span className="text-2xl font-bold text-white">15</span>

@@ -32,15 +32,15 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="relative py-32 bg-white">
+    <section id="contact" className="relative py-16 md:py-20 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
+        <div className="text-center mb-10 md:mb-12">
           <div className="inline-flex items-center gap-2 mb-6">
             <span className="px-3 py-1 rounded-full border border-[#C5A55A]/30 bg-[#C5A55A]/5 text-[#C5A55A] text-xs font-semibold tracking-widest uppercase">
               {t.nav.contact}
             </span>
           </div>
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-foreground leading-tight tracking-tight mb-6">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight tracking-tight mb-4">
             {t.contact.title}
           </h2>
           <p className="mt-4 text-xl text-gray-500 max-w-2xl mx-auto font-light leading-relaxed">
@@ -48,7 +48,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
+        <div className="grid lg:grid-cols-5 gap-10 lg:gap-12">
           {/* Contact info */}
           <div className="lg:col-span-2 flex flex-col justify-between h-full">
             <div className="space-y-8">

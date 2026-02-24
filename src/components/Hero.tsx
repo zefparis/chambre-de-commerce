@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-[85vh] flex items-center justify-center overflow-hidden"
     >
       {/* Background with parallax effect */}
       <div className="absolute inset-0 z-0">

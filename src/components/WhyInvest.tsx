@@ -16,22 +16,22 @@ export default function WhyInvest() {
   ];
 
   return (
-    <section id="why-invest" className="relative py-32 bg-[#f5f5f7]">
+    <section id="why-invest" className="relative py-16 md:py-20 bg-[#f5f5f7]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-10 md:mb-12">
           <div className="inline-flex items-center gap-2 mb-6">
             <span className="px-3 py-1 rounded-full border border-[#C5A55A]/30 bg-[#C5A55A]/5 text-[#C5A55A] text-xs font-semibold tracking-widest uppercase">
               {t.nav.whyDRC}
             </span>
           </div>
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-foreground leading-tight tracking-tight mb-6">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight tracking-tight mb-4">
             {t.whyInvest.title}
           </h2>
         </div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 auto-rows-[minmax(300px,auto)]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-6 auto-rows-[minmax(240px,auto)]">
           {cards.map((card, index) => {
             const Icon = icons[index];
             // Bento layout logic: First and last cards span 2 columns

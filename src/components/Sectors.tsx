@@ -18,15 +18,15 @@ export default function Sectors() {
   const { t } = useLanguage();
 
   return (
-    <section id="sectors" className="relative py-32 bg-white">
+    <section id="sectors" className="relative py-16 md:py-20 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
+        <div className="text-center mb-10 md:mb-12">
           <div className="inline-flex items-center gap-2 mb-6">
             <span className="px-3 py-1 rounded-full border border-[#003DA5]/10 bg-[#003DA5]/5 text-[#003DA5] text-xs font-semibold tracking-widest uppercase">
               {t.nav.services}
             </span>
           </div>
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-foreground leading-tight tracking-tight mb-6">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight tracking-tight mb-4">
             {t.sectors.title}
           </h2>
           <p className="mt-4 text-xl text-gray-500 max-w-3xl mx-auto font-light leading-relaxed">
@@ -34,13 +34,13 @@ export default function Sectors() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {sectorKeys.map((key, index) => {
             const Icon = sectorIcons[index];
             return (
               <div
                 key={key}
-                className="group relative h-[400px] overflow-hidden rounded-3xl bg-gray-100 shadow-sm transition-all duration-500 hover:shadow-2xl hover:-translate-y-1"
+                className="group relative h-[300px] overflow-hidden rounded-2xl bg-gray-100 shadow-sm transition-all duration-500 hover:shadow-2xl hover:-translate-y-1"
               >
                 {/* Background Image */}
                 <div

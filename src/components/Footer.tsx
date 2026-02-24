@@ -17,14 +17,14 @@ export default function Footer() {
   const { t } = useLanguage();
 
   return (
-    <footer className="bg-foreground text-white pt-24 pb-12 overflow-hidden relative">
+    <footer className="bg-foreground text-white pt-16 pb-10 overflow-hidden relative">
       {/* Background gradients */}
       <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-white/10 to-transparent" />
       <div className="absolute -top-[200px] -left-[200px] w-[500px] h-[500px] bg-[#003DA5]/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute -bottom-[200px] -right-[200px] w-[500px] h-[500px] bg-[#C5A55A]/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-20">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12">
           {/* Brand */}
           <div className="lg:col-span-1 space-y-6">
             <a href="#home" className="inline-block">
