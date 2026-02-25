@@ -61,7 +61,7 @@ export const translations = {
           role: "Président National de la CCNE-RDC",
           description:
             "Le président national est le représentant de haut niveau des entreprises auprès des pouvoirs publics et internationaux, agissant comme porte-parole pour influencer les politiques économiques. Élu par ses pairs, il définit les orientations stratégiques, soutient le développement des entreprises, facilite le commerce et assure la bonne gestion du réseau de la chambre.",
-          photo: "/images/team/president-national.jpg",
+          photo: "/images/team/directeur-general.jpg",
         },
         {
           name: "Mike Luntadila Koketua",
@@ -82,7 +82,7 @@ export const translations = {
           role: "Directeur Général",
           description:
             "Son rôle est de superviser et d'organiser les activités de l'association. Dans la gestion quotidienne, le directeur général peut être vu comme superviseur et/ou organisateur. C'est généralement à lui de convoquer l'assemblée générale, le conseil d'administration mais aussi les réunions du bureau.",
-          photo: "/images/team/directeur-general.jpg",
+          photo: "/images/team/president-ca.jpg",
         },
         {
           name: "Ramazani Maftah Amisi",
@@ -224,7 +224,7 @@ export const translations = {
           role: "National President of CCNE-RDC",
           description:
             "The National President is the high-level representative of businesses to public and international authorities, acting as a spokesperson to influence economic policies. Elected by peers, he defines strategic orientations, supports business development, facilitates trade, and ensures sound management of the chamber's network.",
-          photo: "/images/team/president-national.jpg",
+          photo: "/images/team/directeur-general.jpg",
         },
         {
           name: "Mike Luntadila Koketua",
@@ -245,7 +245,7 @@ export const translations = {
           role: "Chief Executive Officer",
           description:
             "His role is to supervise and organize the association's activities. In daily management, the CEO can be seen as supervisor and/or organizer. He is generally responsible for convening the general assembly, the board of directors, and bureau meetings.",
-          photo: "/images/team/directeur-general.jpg",
+          photo: "/images/team/president-ca.jpg",
         },
         {
           name: "Ramazani Maftah Amisi",
