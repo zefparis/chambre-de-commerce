@@ -64,25 +64,11 @@ export const translations = {
           photo: "/images/team/directeur-general.jpg",
         },
         {
-          name: "Mike Luntadila Koketua",
-          role: "Président du Conseil d'Administration",
-          description:
-            "Son rôle est de superviser la gestion des risques de l'entreprise, collaborer avec le Directeur Général et les autres membres de la direction, assurer la conformité aux réglementations et aux normes en vigueur, et établir les relations de confiance avec les actionnaires et les investisseurs.",
-          photo: "/images/team/president-ca.jpg",
-        },
-        {
           name: "Bayibuka Wangu Dede Israel",
           role: "Secrétaire Général",
           description:
             "Son rôle est de superviser et actualiser les plans et les politiques de l'entreprise. Collaborer avec les autres membres de l'organisation pour atteindre les objectifs stratégiques communs. Assurer la mise efficace des processus. Fournir des conseils et des opinions aux membres de l'organisation.",
           photo: "/images/team/secretaire-general.jpg",
-        },
-        {
-          name: "Idriss Fabrice Ikungiya Tshamundji",
-          role: "Directeur Général",
-          description:
-            "Son rôle est de superviser et d'organiser les activités de l'association. Dans la gestion quotidienne, le directeur général peut être vu comme superviseur et/ou organisateur. C'est généralement à lui de convoquer l'assemblée générale, le conseil d'administration mais aussi les réunions du bureau.",
-          photo: "/images/team/president-ca.jpg",
         },
         {
           name: "Ramazani Maftah Amisi",
@@ -227,25 +213,11 @@ export const translations = {
           photo: "/images/team/directeur-general.jpg",
         },
         {
-          name: "Mike Luntadila Koketua",
-          role: "Chairman of the Board of Directors",
-          description:
-            "His role is to oversee the company's risk management, collaborate with the CEO and other members of management, ensure compliance with current regulations and standards, and build trust with shareholders and investors.",
-          photo: "/images/team/president-ca.jpg",
-        },
-        {
           name: "Bayibuka Wangu Dede Israel",
           role: "Secretary General",
           description:
             "His role is to supervise and update company plans and policies, collaborate with other members of the organization to achieve common strategic objectives, ensure efficient process implementation, and provide advice and opinions to organization members.",
           photo: "/images/team/secretaire-general.jpg",
-        },
-        {
-          name: "Idriss Fabrice Ikungiya Tshamundji",
-          role: "Chief Executive Officer",
-          description:
-            "His role is to supervise and organize the association's activities. In daily management, the CEO can be seen as supervisor and/or organizer. He is generally responsible for convening the general assembly, the board of directors, and bureau meetings.",
-          photo: "/images/team/president-ca.jpg",
         },
         {
           name: "Ramazani Maftah Amisi",
