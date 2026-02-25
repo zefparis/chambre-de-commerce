@@ -19,46 +19,48 @@ export default function Team() {
           </h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {t.team.members.map((member, index) => (
             <div
               key={index}
-              className={`group relative bg-gray-50 rounded-3xl overflow-hidden border border-gray-100 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 ${
-                index >= 3 ? "lg:col-span-1 sm:col-span-1" : ""
-              }`}
+              className="group relative bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
             >
-              {/* Photo */}
-              <div className="relative h-64 overflow-hidden bg-gray-200">
+              {/* Photo — natural aspect ratio, no crop */}
+              <div className="relative aspect-4/5 overflow-hidden bg-gray-100">
                 <img
                   src={member.photo}
                   alt={member.name}
-                  className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = "none";
                   }}
                 />
                 
-                {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                {/* Bottom gradient for text readability */}
+                <div className="absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
                 
-                {/* Initial/Fallback if no image */}
+                {/* Name + role overlay on image */}
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <h3 className="font-display text-xl font-bold text-white drop-shadow-md">
+                    {member.name}
+                  </h3>
+                  <p className="text-[#C5A55A] font-semibold text-xs mt-1 uppercase tracking-widest">
+                    {member.role}
+                  </p>
+                </div>
+
+                {/* Fallback initials if no image */}
                 <div className="absolute inset-0 flex items-center justify-center -z-10">
-                  <span className="text-gray-300 text-4xl font-display font-bold">
+                  <span className="text-gray-300 text-5xl font-display font-bold">
                     {member.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
                   </span>
                 </div>
               </div>
 
-              {/* Info */}
-              <div className="p-6">
-                <h3 className="font-display text-2xl font-bold text-gray-900 group-hover:text-[#003DA5] transition-colors">
-                  {member.name}
-                </h3>
-                <p className="text-[#C5A55A] font-medium text-sm mt-2 uppercase tracking-wide">
-                  {member.role}
-                </p>
-                <p className="mt-3 text-gray-700 text-sm leading-relaxed line-clamp-3 group-hover:line-clamp-none transition-all duration-300">
+              {/* Description */}
+              <div className="p-5">
+                <p className="text-gray-600 text-sm leading-relaxed">
                   {member.description}
                 </p>
               </div>
