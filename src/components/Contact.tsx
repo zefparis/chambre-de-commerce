@@ -25,8 +25,8 @@ export default function Contact() {
   };
 
   const contactInfo = [
-    { icon: Phone, title: "Téléphone", label: "+243 846 870 811", sublabel: "+243 999 979 173 / +243 995 941 338" },
-    { icon: Mail, title: "Email", label: "ccne-rdc23@gmail.com", href: "mailto:ccne-rdc23@gmail.com" },
+    { icon: Phone, title: "Téléphone", label: "+243 977 993 499", sublabel: "+243 980 691 637 / +243 846 870 811" },
+    { icon: Mail, title: "Email", label: "ccnerdc3@gmail.com", href: "mailto:ccnerdc3@gmail.com" },
     { icon: Globe, title: "Site web", label: "www.ccne-rdc.com", href: "https://www.ccne-rdc.com" },
     { icon: MapPin, title: "Adresse", label: "16 Avenue Londola, Lingwala", sublabel: "Kinshasa, RDC" },
   ];
