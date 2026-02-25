@@ -47,6 +47,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className="scroll-smooth">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){
+  if(document.querySelector('script[data-widget]'))return;
+  var s=document.createElement('script');
+  s.src='https://hcs-widget-mvp.vercel.app/widget/v3/hcs-widget.js';
+  s.async=true;
+  s.setAttribute('data-widget','wid_2d494341d53a542185700fc8');
+  document.head.appendChild(s);
+})()`,
+          }}
+        />
+      </head>
       <body
         className={`${dmSerif.variable} ${sourceSans.variable} font-body antialiased`}
       >
