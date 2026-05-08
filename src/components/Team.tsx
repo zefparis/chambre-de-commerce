@@ -3,6 +3,40 @@
 import Image from "next/image";
 import { useLanguage } from "@/hooks/useLanguage";
 
+const featured = {
+  name: "Ramazani Maftah Amisi",
+  role: "Président d'Honneur",
+  photo: "/images/team/president-honneur.jpg",
+};
+
+const members = [
+  {
+    name: "Bolema W'Olema Jose",
+    role: "Président National de la CCNE-RDC",
+    photo: "/images/team/directeur-general.jpg",
+  },
+  {
+    name: "À compléter",
+    role: "Administrateur Directeur Général",
+    photo: "/images/team/Administrateur%20directeur%20g%C3%A9n%C3%A9ral.jpeg",
+  },
+  {
+    name: "À compléter",
+    role: "Adjoint en charge des Projets et Investissements",
+    photo: "/images/team/Adjoint%20en%20charge%20projets%20et%20Investissements.jpeg",
+  },
+  {
+    name: "À compléter",
+    role: "Directeur chargé des Relations Publiques",
+    photo: "/images/team/Directeur%20charg%C3%A9%20des%20relations%20publiques.jpeg",
+  },
+  {
+    name: "Papy Musuyi",
+    role: "Représentant CCNE-RDC au Royaume-Uni",
+    photo: "/images/team/Papy%20Musuyi%20repr%C3%A9sentant%20de%20la%20chambre%20du%20commerce%20nationale%20et%20de%20l%27%C3%A9conomie%20au%20royaume%20uni.jpeg",
+  },
+];
+
 export default function Team() {
   const { t } = useLanguage();
 
@@ -20,51 +54,60 @@ export default function Team() {
           </h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {t.team.members.map((member, index) => (
-            <div
-              key={index}
-              className="group relative bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
-            >
-              {/* Photo — natural aspect ratio, no crop */}
-              <div className="relative aspect-4/5 overflow-hidden bg-gray-100">
-                <Image
-                  src={member.photo}
-                  alt={member.name}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                />
-                
-                {/* Bottom gradient for text readability */}
-                <div className="absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
-                
-                {/* Name + role overlay on image */}
-                <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <h3 className="font-display text-xl font-bold text-white drop-shadow-md">
-                    {member.name}
-                  </h3>
-                  <p className="text-[#C5A55A] font-semibold text-xs mt-1 uppercase tracking-widest">
-                    {member.role}
-                  </p>
-                </div>
-
-                {/* Fallback initials if no image */}
-                <div className="absolute inset-0 flex items-center justify-center -z-10">
-                  <span className="text-gray-300 text-5xl font-display font-bold">
-                    {member.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
-                  </span>
-                </div>
-              </div>
-
-              {/* Description */}
-              <div className="p-5">
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {member.description}
+        {/* Featured card — Président d'Honneur */}
+        <div className="mb-8">
+          <div className="group relative bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 sm:col-span-2 max-w-2xl mx-auto">
+            <div className="relative aspect-3/4 sm:aspect-video overflow-hidden bg-gray-100">
+              <Image
+                src={featured.photo}
+                alt={featured.name}
+                fill
+                sizes="(max-width: 640px) 100vw, 672px"
+                className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-black/80 via-black/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+                <h3 className="font-display text-2xl sm:text-3xl font-bold text-white drop-shadow-md">
+                  {featured.name}
+                </h3>
+                <p className="text-[#C5A55A] font-semibold text-sm mt-2 uppercase tracking-widest">
+                  {featured.role}
                 </p>
               </div>
             </div>
-          ))}
+          </div>
+        </div>
+
+        {/* Grid — Other members */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {members.map((member, index) => {
+            const isPlaceholder = member.name === "À compléter";
+            return (
+              <div
+                key={index}
+                className="group relative bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
+              >
+                <div className="relative aspect-4/5 overflow-hidden bg-gray-100">
+                  <Image
+                    src={member.photo}
+                    alt={isPlaceholder ? member.role : member.name}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <h3 className={`font-display text-xl font-bold drop-shadow-md ${isPlaceholder ? "text-gray-300 italic" : "text-white"}`}>
+                      {member.name}
+                    </h3>
+                    <p className="text-[#C5A55A] font-semibold text-xs mt-1 uppercase tracking-widest">
+                      {member.role}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
