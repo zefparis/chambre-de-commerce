@@ -22,3 +22,18 @@ export const localeNames: Record<Locale, string> = {
   hi: "हिन्दी",
   sw: "Kiswahili",
 };
+
+export const localeFlags: Record<Locale, string> = {
+  fr: "🇫🇷",
+  en: "🇬🇧",
+  zh: "🇨🇳",
+  ar: "🇸🇦",
+  pt: "🇧🇷",
+  es: "🇪🇸",
+  ja: "🇯🇵",
+  ko: "🇰🇷",
+  ru: "🇷🇺",
+  tr: "🇹🇷",
+  hi: "🇮🇳",
+  sw: "🇹🇿",
+};
