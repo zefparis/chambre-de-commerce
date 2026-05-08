@@ -1,38 +1,6 @@
-"use client";
+import { redirect } from "next/navigation";
+import { routing } from "@/i18n/routing";
 
-import { LanguageProvider } from "@/hooks/useLanguage";
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import WhyInvest from "@/components/WhyInvest";
-import Sectors from "@/components/Sectors";
-import VideoPresentation from "@/components/VideoPresentation";
-import Team from "@/components/Team";
-import Network from "@/components/Network";
-import Partners from "@/components/Partners";
-import Events from "@/components/Events";
-import Gallery from "@/components/Gallery";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
-
-export default function Home() {
-  return (
-    <LanguageProvider>
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <WhyInvest />
-        <Sectors />
-        <VideoPresentation />
-        <Team />
-        <Network />
-        <Partners />
-        <Events />
-        <Gallery />
-        <Contact />
-      </main>
-      <Footer />
-    </LanguageProvider>
-  );
+export default function RootPage() {
+  redirect(`/${routing.defaultLocale}`);
 }

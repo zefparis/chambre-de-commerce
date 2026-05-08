@@ -1,6 +1,6 @@
 "use client";
 
-import { useLanguage } from "@/hooks/useLanguage";
+import { useTranslations } from "next-intl";
 import { Wheat, Mountain, Zap, Building2, Palmtree, Cpu } from "lucide-react";
 
 const sectorIcons = [Wheat, Mountain, Zap, Building2, Palmtree, Cpu];
@@ -15,7 +15,7 @@ const sectorImages = [
 ];
 
 export default function Sectors() {
-  const { t } = useLanguage();
+  const t = useTranslations();
 
   return (
     <section id="sectors" className="relative py-16 md:py-20 bg-white">
@@ -23,14 +23,14 @@ export default function Sectors() {
         <div className="text-center mb-10 md:mb-12">
           <div className="inline-flex items-center gap-2 mb-6">
             <span className="px-3 py-1 rounded-full border border-[#003DA5]/10 bg-[#003DA5]/5 text-[#003DA5] text-xs font-semibold tracking-widest uppercase">
-              {t.nav.services}
+              {t("nav.services")}
             </span>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight tracking-tight mb-4">
-            {t.sectors.title}
+            {t("sectors.title")}
           </h2>
           <p className="mt-3 text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            {t.sectors.intro}
+            {t("sectors.intro")}
           </p>
         </div>
 
@@ -66,7 +66,7 @@ export default function Sectors() {
                     </div>
                     
                     <h3 className="font-display text-3xl font-bold text-white mb-2 tracking-tight">
-                      {t.sectors[key]}
+                      {t(`sectors.${key}`)}
                     </h3>
                     
                     <p className="text-white/80 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-2 group-hover:translate-y-0 delay-100">

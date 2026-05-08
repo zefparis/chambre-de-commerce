@@ -1,12 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { useLanguage } from "@/hooks/useLanguage";
+import { useTranslations } from "next-intl";
 import { Target, Handshake } from "lucide-react";
 import { ministerLogos } from "@/data/ministeres";
 
 export default function About() {
-  const { t } = useLanguage();
+  const t = useTranslations();
 
   return (
     <section id="about" className="relative py-16 md:py-20 bg-gray-50">
@@ -15,11 +15,11 @@ export default function About() {
         <div className="text-center mb-10 md:mb-12">
           <div className="inline-flex items-center gap-2 mb-6">
             <span className="px-3 py-1 rounded-full border border-[#C5A55A]/30 bg-[#C5A55A]/5 text-[#C5A55A] text-xs font-semibold tracking-widest uppercase">
-              {t.nav.about}
+              {t("nav.about")}
             </span>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight tracking-tight mb-4">
-            {t.about.title}
+            {t("about.title")}
           </h2>
         </div>
 
@@ -29,13 +29,13 @@ export default function About() {
           <div className="space-y-8">
             <div className="prose prose-lg prose-gray max-w-none">
               <p className="text-lg text-gray-700 leading-relaxed">
-                {t.about.text}
+                {t("about.text")}
               </p>
             </div>
             
             <div className="pt-6 border-t border-gray-200">
               <h4 className="text-sm font-bold text-gray-900 uppercase tracking-widest mb-4">
-                Sous la tutelle de
+                {t("about.tutelleTitle")}
               </h4>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {ministerLogos.map((logo) => (
@@ -71,20 +71,20 @@ export default function About() {
                 </div>
                 <div>
                   <h3 className="font-display text-2xl font-bold text-gray-900">
-                    {t.about.roleTitle}
+                    {t("about.roleTitle")}
                   </h3>
                   <div className="h-1 w-12 bg-[#C5A55A] mt-2 rounded-full" />
                 </div>
               </div>
               
               <p className="text-gray-700 text-base leading-relaxed mb-8">
-                {t.about.roleText}
+                {t("about.roleText")}
               </p>
               
               <div className="flex items-center justify-between pt-8 border-t border-gray-100">
                 <div className="flex items-center gap-2 text-[#003DA5] font-semibold">
                   <Handshake className="h-5 w-5" />
-                  <span>Partenaire de confiance</span>
+                  <span>{t("about.trustPartner")}</span>
                 </div>
                 <Image 
                   src="/images/logos/LOGO-CCNE.jpg" 

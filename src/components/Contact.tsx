@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { useLanguage } from "@/hooks/useLanguage";
+import { useTranslations } from "next-intl";
 import { Phone, Mail, Globe, MapPin, Send, ArrowRight } from "lucide-react";
 
 export default function Contact() {
-  const { t } = useLanguage();
+  const t = useTranslations();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -25,10 +25,10 @@ export default function Contact() {
   };
 
   const contactInfo = [
-    { icon: Phone, title: "Téléphone", label: "+243 977 993 499", sublabel: "+243 980 691 637 / +243 846 870 811" },
-    { icon: Mail, title: "Email", label: "ccnerdc3@gmail.com", href: "mailto:ccnerdc3@gmail.com" },
-    { icon: Globe, title: "Site web", label: "www.ccne-rdc.com", href: "https://www.ccne-rdc.com" },
-    { icon: MapPin, title: "Adresse", label: "16 Avenue Londola, Lingwala", sublabel: "Kinshasa, RDC" },
+    { icon: Phone, title: t("contact.infoPhone"), label: "+243 977 993 499", sublabel: "+243 980 691 637 / +243 846 870 811" },
+    { icon: Mail, title: t("contact.infoEmail"), label: "ccnerdc3@gmail.com", href: "mailto:ccnerdc3@gmail.com" },
+    { icon: Globe, title: t("contact.infoWeb"), label: "www.ccne-rdc.com", href: "https://www.ccne-rdc.com" },
+    { icon: MapPin, title: t("contact.infoAddress"), label: "16 Avenue Londola, Lingwala", sublabel: "Kinshasa, RDC" },
   ];
 
   return (
@@ -38,14 +38,14 @@ export default function Contact() {
         <div className="text-center mb-10 md:mb-12">
           <div className="inline-flex items-center gap-2 mb-6">
             <span className="px-3 py-1 rounded-full border border-[#C5A55A]/30 bg-[#C5A55A]/5 text-[#C5A55A] text-xs font-semibold tracking-widest uppercase">
-              {t.nav.contact}
+              {t("nav.contact")}
             </span>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight tracking-tight mb-4">
-            {t.contact.title}
+            {t("contact.title")}
           </h2>
           <p className="mt-3 text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            {t.contact.subtitle}
+            {t("contact.subtitle")}
           </p>
         </div>
 
@@ -60,8 +60,8 @@ export default function Contact() {
               <div className="absolute -bottom-20 -left-20 w-48 h-48 bg-[#C5A55A]/20 rounded-full blur-3xl" />
               
               <div className="relative z-10">
-                <h3 className="font-display text-2xl font-bold mb-2">Parlons de votre projet</h3>
-                <p className="text-white/60 text-sm mb-8">Notre équipe est disponible pour vous accompagner dans votre démarche d&apos;investissement.</p>
+                <h3 className="font-display text-2xl font-bold mb-2">{t("contact.panelTitle")}</h3>
+                <p className="text-white/60 text-sm mb-8">{t("contact.panelSubtitle")}</p>
 
                 <div className="space-y-5">
                   {contactInfo.map((item) => {
@@ -112,8 +112,8 @@ export default function Contact() {
                   <Send className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="font-display text-lg font-bold text-gray-900">Envoyez-nous un message</h3>
-                  <p className="text-gray-500 text-xs">Réponse garantie sous 48h</p>
+                  <h3 className="font-display text-lg font-bold text-gray-900">{t("contact.formTitle")}</h3>
+                  <p className="text-gray-500 text-xs">{t("contact.formSubtitle")}</p>
                 </div>
               </div>
 
@@ -121,7 +121,7 @@ export default function Contact() {
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-xs font-semibold text-gray-600 mb-1.5 uppercase tracking-wider">
-                      {t.contact.form.name} *
+                      {t("contact.form.name")} *
                     </label>
                     <input
                       type="text"
@@ -136,7 +136,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-xs font-semibold text-gray-600 mb-1.5 uppercase tracking-wider">
-                      {t.contact.form.email} *
+                      {t("contact.form.email")} *
                     </label>
                     <input
                       type="email"
@@ -151,7 +151,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <label htmlFor="company" className="block text-xs font-semibold text-gray-600 mb-1.5 uppercase tracking-wider">
-                      {t.contact.form.company}
+                      {t("contact.form.company")}
                     </label>
                     <input
                       type="text"
@@ -165,7 +165,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <label htmlFor="country" className="block text-xs font-semibold text-gray-600 mb-1.5 uppercase tracking-wider">
-                      {t.contact.form.country}
+                      {t("contact.form.country")}
                     </label>
                     <input
                       type="text"
@@ -181,7 +181,7 @@ export default function Contact() {
                 
                 <div>
                   <label htmlFor="subject" className="block text-xs font-semibold text-gray-600 mb-1.5 uppercase tracking-wider">
-                    {t.contact.form.subject} *
+                    {t("contact.form.subject")} *
                   </label>
                   <input
                     type="text"
@@ -197,7 +197,7 @@ export default function Contact() {
 
                 <div>
                   <label htmlFor="message" className="block text-xs font-semibold text-gray-600 mb-1.5 uppercase tracking-wider">
-                    {t.contact.form.message} *
+                    {t("contact.form.message")} *
                   </label>
                   <textarea
                     id="message"
@@ -212,12 +212,12 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-center justify-between pt-2">
-                  <p className="text-xs text-gray-400">* Champs obligatoires</p>
+                  <p className="text-xs text-gray-400">* {t("contact.form.required")}</p>
                   <button
                     type="submit"
                     className="inline-flex items-center gap-2 rounded-xl bg-[#003DA5] px-6 py-3 text-sm font-bold text-white shadow-lg hover:bg-[#002d7a] hover:shadow-xl hover:gap-3 transition-all duration-300"
                   >
-                    {t.contact.form.send}
+                    {t("contact.form.send")}
                     <ArrowRight className="h-4 w-4" />
                   </button>
                 </div>

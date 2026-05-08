@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { useLanguage } from "@/hooks/useLanguage";
+import { useTranslations } from "next-intl";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 // ─── To add more images, just add filenames here. ───
@@ -35,7 +35,7 @@ const galleryImages = GALLERY_FILES.map((file, i) => ({
 }));
 
 export default function Gallery() {
-  const { t } = useLanguage();
+  const t = useTranslations();
   const [lightbox, setLightbox] = useState<number | null>(null);
 
   const openLightbox = (index: number) => setLightbox(index);
@@ -67,14 +67,14 @@ export default function Gallery() {
         <div className="text-center mb-10 md:mb-12">
           <div className="inline-flex items-center gap-2 mb-6">
             <span className="px-3 py-1 rounded-full border border-[#C5A55A]/30 bg-[#C5A55A]/5 text-[#C5A55A] text-xs font-semibold tracking-widest uppercase">
-              {t.nav.gallery}
+              {t("nav.gallery")}
             </span>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight tracking-tight mb-4">
-            {t.gallery.title}
+            {t("gallery.title")}
           </h2>
           <p className="mt-3 text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            {t.gallery.subtitle}
+            {t("gallery.subtitle")}
           </p>
         </div>
 

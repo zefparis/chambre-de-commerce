@@ -1,0 +1,149 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "whyDRC": "Pourquoi la RDC",
+    "services": "Domaines",
+    "team": "Équipe",
+    "network": "Réseau",
+    "partners": "Partenaires",
+    "events": "Événements",
+    "gallery": "Galerie",
+    "contact": "Contact",
+    "cta": "Nous contacter"
+  },
+  "hero": {
+    "badge": "Chambre de Commerce Nationale",
+    "title": "La RDC : votre prochaine grande opportunité d'investissement",
+    "subtitle": "Accédez à un marché de 100 millions de consommateurs, des ressources stratégiques uniques au monde et un accompagnement sécurisé par la Chambre de Commerce Nationale.",
+    "cta1": "Découvrir les opportunités",
+    "cta2": "Nous contacter",
+    "scrollLabel": "Découvrir"
+  },
+  "about": {
+    "title": "Votre partenaire officiel pour investir en RDC",
+    "text": "La Chambre de Commerce Nationale et de l'Économie (CCNE-RDC) est l'institution publique de référence placée sous la tutelle du Ministère du Commerce Extérieur. Notre mission : vous ouvrir les portes de la RDC en toute sécurité. Nous sommes l'interface directe entre vous et les autorités congolaises — chaque démarche administrative, juridique et fiscale est prise en charge pour que vous puissiez vous concentrer sur votre projet.",
+    "tutelleTitle": "Sous la tutelle de",
+    "roleTitle": "Pourquoi passer par la CCNE ?",
+    "roleText": "Investir dans un nouveau pays peut être complexe. La CCNE-RDC élimine cette complexité : nous sécurisons vos démarches légales, nous vous connectons aux bons interlocuteurs gouvernementaux, nous identifions les meilleures opportunités dans votre secteur et nous vous accompagnons de A à Z. Avec nous, vous investissez en toute confiance, en toute légalité, et avec un retour sur investissement maximisé.",
+    "trustPartner": "Partenaire de confiance"
+  },
+  "whyInvest": {
+    "title": "Pourquoi investir en RDC ?",
+    "card1Title": "Un marché à 100 millions de consommateurs",
+    "card1Text": "Cobalt, cuivre, lithium, or, diamant — la RDC détient 70 % des réserves mondiales de coltan et des richesses minières colossales. Ajoutez à cela un marché intérieur en pleine explosion démographique : c'est le moment d'y être avant tout le monde.",
+    "card2Title": "Au cœur de l'Afrique, au cœur des affaires",
+    "card2Text": "Frontalière de 9 pays, la RDC est la porte d'entrée vers l'Afrique australe, centrale et orientale. Un positionnement géographique unique qui vous donne accès à plus de 300 millions de consommateurs dans la sous-région.",
+    "card3Title": "Zéro risque administratif avec la CCNE",
+    "card3Text": "Fini les incertitudes : la CCNE-RDC prend en charge toutes vos démarches administratives, juridiques et fiscales. Nous vous guidons étape par étape, de l'étude de marché jusqu'à l'implantation effective. Vous bénéficiez d'un accompagnement sur mesure et d'un accès direct aux avantages fiscaux réservés aux investisseurs.",
+    "card4Title": "Un environnement des affaires en pleine transformation",
+    "card4Text": "La RDC modernise activement son cadre réglementaire pour attirer les investisseurs internationaux. La CCNE-RDC est au cœur de cette transformation : nous faisons le pont entre vous et les institutions, nous levons les obstacles bureaucratiques et nous garantissons la transparence de chaque étape de votre investissement."
+  },
+  "sectors": {
+    "title": "Domaines d'intervention",
+    "intro": "Des secteurs à fort potentiel de rentabilité, encore largement sous-exploités. La CCNE-RDC vous accompagne pour saisir ces opportunités avant la concurrence.",
+    "agriculture": "Agriculture",
+    "mining": "Mines",
+    "energy": "Énergie",
+    "infrastructure": "Infrastructures",
+    "tourism": "Tourisme",
+    "tech": "Nouvelles technologies"
+  },
+  "video": {
+    "badge": "Présentation",
+    "title": "Découvrez la CCNE-RDC",
+    "subtitle": "En quelques minutes, comprenez pourquoi la RDC est votre prochaine destination d'investissement."
+  },
+  "team": {
+    "title": "Une équipe dédiée à la réussite de votre investissement",
+    "subtitle": "De la faisabilité à l'implantation, chaque étape est prise en charge par un expert dédié. Vous investissez — nous gérons.",
+    "coverageAdmin": "Administratif & Juridique",
+    "coverageSecurity": "Sécurité terrain",
+    "coverageFeasibility": "Faisabilité & Due Diligence",
+    "coverageRelations": "Relations institutionnelles",
+    "featuredName": "Ramazani Maftah Amisi",
+    "featuredRole": "Président d'Honneur",
+    "featuredTagline": "Vision stratégique et garant institutionnel de chaque mission.",
+    "members": {
+      "bolema": { "name": "Bolema W'Olema Jose", "role": "Président National de la CCNE-RDC", "badge": "Leadership" },
+      "anthony": { "name": "Anthony Lacolombe Molongya", "role": "Administrateur Directeur Général", "badge": "Administration" },
+      "rex": { "name": "Rex Daniel Kilauri", "role": "Adjoint en charge des Projets et Investissements", "badge": "Investissements" },
+      "kale": { "name": "Kale Kapenga Kilolo", "role": "Directeur chargé des Relations Publiques", "badge": "Relations Publiques" },
+      "papy": { "name": "Papy Musuyi", "role": "Représentant CCNE-RDC au Royaume-Uni", "badge": "Réseau UK" }
+    },
+    "reassurance": "Chaque investisseur bénéficie d'un référent dédié, d'un accompagnement juridique complet et d'une couverture sécuritaire sur le terrain.",
+    "cta": "Démarrer mon projet"
+  },
+  "network": {
+    "title": "Notre réseau international",
+    "subtitle": "La CCNE-RDC est représentée dans 15 pays à travers le monde",
+    "countries": ["Zambie", "Canada", "Mexique", "Royaume-Uni", "Maroc", "États-Unis", "Afrique du Sud", "Benelux", "Japon", "Iran", "Côte d'Ivoire", "Namibie", "France", "Belgique", "SADC"],
+    "countLabel": "pays de représentation"
+  },
+  "partners": {
+    "title": "Nos partenaires"
+  },
+  "events": {
+    "title": "Événements 2025",
+    "watchVideo": "Voir la vidéo",
+    "items": [
+      {
+        "name": "AFEX 2025 — Africa Business Forum & Expo",
+        "date": "25-26 Juin 2025",
+        "location": "Istanbul, Turquie",
+        "description": "Panel Conférence — Découvrir les opportunités des investissements en RDC. Stand de la RD Congo. En partenariat avec TABA (Turkish African Business Association) et Brandsbridge.",
+        "image": "/images/events/afex.png",
+        "videoUrl": "https://youtu.be/YJTSDxXIiUQ"
+      },
+      {
+        "name": "Salon de l'Industrie Alimentaire en Turquie",
+        "date": "02-05 Juillet 2025",
+        "location": "Istanbul, Turquie",
+        "description": "Participation au salon de l'industrie alimentaire — Agrobusiness et opportunités commerciales.",
+        "image": "/images/events/afex1.png",
+        "videoUrl": "https://youtu.be/OxxUF2_vGVE"
+      }
+    ]
+  },
+  "gallery": {
+    "title": "Galerie photos",
+    "subtitle": "Nos événements et réunions en images"
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Prêt à investir ? Parlons de votre projet. Notre équipe vous répond sous 48h.",
+    "panelTitle": "Parlons de votre projet",
+    "panelSubtitle": "Notre équipe est disponible pour vous accompagner dans votre démarche d'investissement.",
+    "infoPhone": "Téléphone",
+    "infoEmail": "Email",
+    "infoWeb": "Site web",
+    "infoAddress": "Adresse",
+    "formTitle": "Envoyez-nous un message",
+    "formSubtitle": "Réponse garantie sous 48h",
+    "form": {
+      "name": "Nom complet",
+      "email": "Email",
+      "company": "Entreprise",
+      "country": "Pays",
+      "subject": "Sujet",
+      "message": "Message",
+      "send": "Envoyer",
+      "required": "Champs obligatoires",
+      "placeholderName": "John Doe",
+      "placeholderEmail": "john@example.com",
+      "placeholderCompany": "Entreprise Ltd",
+      "placeholderCountry": "RDC",
+      "placeholderSubject": "Demande de partenariat",
+      "placeholderMessage": "Décrivez votre projet d'investissement..."
+    }
+  },
+  "footer": {
+    "description": "La Chambre de Commerce Nationale et de l'Économie de la République Démocratique du Congo.",
+    "navigationTitle": "Navigation",
+    "contactTitle": "Contact",
+    "tutelleTitle": "Sous la tutelle de",
+    "copyright": "© 2025 CCNE-RDC — Chambre de Commerce Nationale et de l'Économie de la RDC. Tous droits réservés.",
+    "privacy": "Confidentialité",
+    "legal": "Mentions légales"
+  }
+}

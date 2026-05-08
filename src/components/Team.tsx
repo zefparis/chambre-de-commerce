@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useLanguage } from "@/hooks/useLanguage";
+import { useTranslations } from "next-intl";
 import { Landmark, ShieldCheck, BarChart3, Handshake, ArrowRight } from "lucide-react";
 
 const featured = {
@@ -57,7 +57,7 @@ const coverageItems = [
 ];
 
 export default function Team() {
-  const { t } = useLanguage();
+  const t = useTranslations();
 
   return (
     <section id="team" className="relative py-16 md:py-20 bg-white">
@@ -67,14 +67,14 @@ export default function Team() {
         <div className="text-center mb-10 md:mb-12">
           <div className="inline-flex items-center gap-2 mb-6">
             <span className="px-3 py-1 rounded-full border border-[#C5A55A]/30 bg-[#C5A55A]/5 text-[#C5A55A] text-xs font-semibold tracking-widest uppercase">
-              {t.nav.team}
+              {t("nav.team")}
             </span>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight tracking-tight mb-4">
-            Une équipe dédiée à la réussite de votre investissement
+            {t("team.title")}
           </h2>
           <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            De la faisabilité à l&apos;implantation, chaque étape est prise en charge par un expert dédié. Vous investissez — nous gérons.
+            {t("team.subtitle")}
           </p>
         </div>
 
@@ -161,13 +161,13 @@ export default function Team() {
         {/* ── Reassurance block ── */}
         <div className="mt-14 rounded-2xl bg-[#f0f4fa] border border-[#003DA5]/10 p-8 sm:p-10 text-center">
           <p className="text-gray-800 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-6">
-            Chaque investisseur bénéficie d&apos;un référent dédié, d&apos;un accompagnement juridique complet et d&apos;une couverture sécuritaire sur le terrain.
+            {t("team.reassurance")}
           </p>
           <a
             href="#contact"
             className="inline-flex items-center gap-2 rounded-full bg-[#003DA5] px-7 py-3 text-sm font-semibold text-white hover:bg-[#002d7a] transition-colors duration-300 shadow-md hover:shadow-lg"
           >
-            Démarrer mon projet
+            {t("team.cta")}
             <ArrowRight className="h-4 w-4" />
           </a>
         </div>

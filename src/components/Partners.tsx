@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useLanguage } from "@/hooks/useLanguage";
+import { useTranslations } from "next-intl";
 
 const partners = [
   { name: "Ministère des Affaires Étrangères", logo: "/images/partners/mae.png", url: "https://diplomatie.gouv.cd/" },
@@ -17,7 +17,7 @@ const partners = [
 ];
 
 export default function Partners() {
-  const { t } = useLanguage();
+  const t = useTranslations();
 
   return (
     <section id="partners" className="relative py-16 md:py-20 bg-[#f5f5f7]">
@@ -25,11 +25,11 @@ export default function Partners() {
         <div className="text-center mb-10 md:mb-12">
           <div className="inline-flex items-center gap-2 mb-6">
             <span className="px-3 py-1 rounded-full border border-[#C5A55A]/30 bg-[#C5A55A]/5 text-[#C5A55A] text-xs font-semibold tracking-widest uppercase">
-              {t.nav.partners}
+              {t("nav.partners")}
             </span>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight tracking-tight mb-4">
-            {t.partners.title}
+            {t("partners.title")}
           </h2>
         </div>
 

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useLanguage } from "@/hooks/useLanguage";
+import { useTranslations } from "next-intl";
 import { MapPin } from "lucide-react";
 
 const countryFlags: Record<string, string> = {
@@ -23,7 +23,8 @@ const countryFlags: Record<string, string> = {
 };
 
 export default function Network() {
-  const { t, lang } = useLanguage();
+  const t = useTranslations();
+  const countries: string[] = t.raw("network.countries");
 
   return (
     <section id="network" className="relative py-16 md:py-20 bg-foreground overflow-hidden">
@@ -37,19 +38,19 @@ export default function Network() {
         <div className="text-center mb-10 md:mb-12">
           <div className="inline-flex items-center gap-2 mb-6">
             <span className="px-3 py-1 rounded-full border border-white/20 bg-white/5 text-white/80 text-xs font-semibold tracking-widest uppercase backdrop-blur-md">
-              {t.nav.network}
+              {t("nav.network")}
             </span>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight tracking-tight mb-4">
-            {t.network.title}
+            {t("network.title")}
           </h2>
           <p className="mt-4 text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
-            {t.network.subtitle}
+            {t("network.subtitle")}
           </p>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-          {t.network.countries.map((country) => (
+          {countries.map((country) => (
             <div
               key={country}
               className="group flex items-center gap-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl px-5 py-4 hover:bg-white/10 hover:border-[#C5A55A]/50 hover:scale-[1.02] transition-all duration-300"
@@ -81,7 +82,7 @@ export default function Network() {
             <MapPin className="h-5 w-5 text-[#C5A55A]" />
             <span className="text-2xl font-bold text-white">15</span>
             <span className="text-gray-400 text-sm font-medium uppercase tracking-wide">
-              {lang === "fr" ? "pays de représentation" : "countries represented"}
+              {t("network.countLabel")}
             </span>
           </div>
         </div>

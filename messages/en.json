@@ -1,0 +1,149 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "whyDRC": "Why the DRC",
+    "services": "Sectors",
+    "team": "Team",
+    "network": "Network",
+    "partners": "Partners",
+    "events": "Events",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "cta": "Contact us"
+  },
+  "hero": {
+    "badge": "National Chamber of Commerce",
+    "title": "The DRC: Your Next Big Investment Opportunity",
+    "subtitle": "Access a market of 100 million consumers, world-class strategic resources, and secure guidance from the National Chamber of Commerce.",
+    "cta1": "Discover opportunities",
+    "cta2": "Contact us",
+    "scrollLabel": "Discover"
+  },
+  "about": {
+    "title": "Your Official Partner for Investing in the DRC",
+    "text": "The National Chamber of Commerce and Economy (CCNE-RDC) is the leading public institution operating under the Ministry of Foreign Trade. Our mission: to open the doors of the DRC for you — safely and legally. We serve as your direct interface with Congolese authorities, handling every administrative, legal, and tax procedure so you can focus entirely on your project.",
+    "tutelleTitle": "Under the supervision of",
+    "roleTitle": "Why go through the CCNE?",
+    "roleText": "Investing in a new country can be complex. The CCNE-RDC eliminates that complexity: we secure your legal procedures, connect you with the right government contacts, identify the best opportunities in your sector, and support you from start to finish. With us, you invest with full confidence, full legality, and maximized returns.",
+    "trustPartner": "Trusted partner"
+  },
+  "whyInvest": {
+    "title": "Why Invest in the DRC?",
+    "card1Title": "A Market of 100 Million Consumers",
+    "card1Text": "Cobalt, copper, lithium, gold, diamonds — the DRC holds 70% of the world's coltan reserves and colossal mineral wealth. Add a booming domestic market with explosive demographic growth: now is the time to be there before everyone else.",
+    "card2Title": "Heart of Africa, Heart of Business",
+    "card2Text": "Bordering 9 countries, the DRC is the gateway to Southern, Central, and Eastern Africa. A unique geographic position giving you access to over 300 million consumers in the sub-region.",
+    "card3Title": "Zero Administrative Risk with the CCNE",
+    "card3Text": "No more uncertainty: the CCNE-RDC handles all your administrative, legal, and tax procedures. We guide you step by step, from market research to actual establishment. You benefit from tailored support and direct access to tax incentives reserved for investors.",
+    "card4Title": "A Business Environment in Full Transformation",
+    "card4Text": "The DRC is actively modernizing its regulatory framework to attract international investors. The CCNE-RDC is at the heart of this transformation: we bridge the gap between you and institutions, remove bureaucratic obstacles, and guarantee transparency at every stage of your investment."
+  },
+  "sectors": {
+    "title": "Sectors of Intervention",
+    "intro": "High-return sectors that are still largely untapped. The CCNE-RDC supports you in seizing these opportunities before the competition.",
+    "agriculture": "Agriculture",
+    "mining": "Mining",
+    "energy": "Energy",
+    "infrastructure": "Infrastructure",
+    "tourism": "Tourism",
+    "tech": "New Technologies"
+  },
+  "video": {
+    "badge": "Presentation",
+    "title": "Discover the CCNE-RDC",
+    "subtitle": "In just a few minutes, understand why the DRC is your next investment destination."
+  },
+  "team": {
+    "title": "A team dedicated to the success of your investment",
+    "subtitle": "From feasibility to establishment, each step is handled by a dedicated expert. You invest — we manage.",
+    "coverageAdmin": "Administrative & Legal",
+    "coverageSecurity": "Field Security",
+    "coverageFeasibility": "Feasibility & Due Diligence",
+    "coverageRelations": "Institutional Relations",
+    "featuredName": "Ramazani Maftah Amisi",
+    "featuredRole": "Honorary President",
+    "featuredTagline": "Strategic vision and institutional guarantor of every mission.",
+    "members": {
+      "bolema": { "name": "Bolema W'Olema Jose", "role": "National President of CCNE-RDC", "badge": "Leadership" },
+      "anthony": { "name": "Anthony Lacolombe Molongya", "role": "Managing Director", "badge": "Administration" },
+      "rex": { "name": "Rex Daniel Kilauri", "role": "Deputy in charge of Projects and Investments", "badge": "Investments" },
+      "kale": { "name": "Kale Kapenga Kilolo", "role": "Director of Public Relations", "badge": "Public Relations" },
+      "papy": { "name": "Papy Musuyi", "role": "CCNE-RDC Representative in the United Kingdom", "badge": "UK Network" }
+    },
+    "reassurance": "Every investor benefits from a dedicated referent, complete legal support, and security coverage in the field.",
+    "cta": "Start my project"
+  },
+  "network": {
+    "title": "Our International Network",
+    "subtitle": "The CCNE-RDC is represented in 15 countries worldwide",
+    "countries": ["Zambia", "Canada", "Mexico", "United Kingdom", "Morocco", "United States", "South Africa", "Benelux", "Japan", "Iran", "Ivory Coast", "Namibia", "France", "Belgium", "SADC"],
+    "countLabel": "countries represented"
+  },
+  "partners": {
+    "title": "Our Partners"
+  },
+  "events": {
+    "title": "2025 Events",
+    "watchVideo": "Watch the video",
+    "items": [
+      {
+        "name": "AFEX 2025 — Africa Business Forum & Expo",
+        "date": "June 25-26, 2025",
+        "location": "Istanbul, Turkey",
+        "description": "Panel Conference — Discover investment opportunities in the DRC. DR Congo exhibition stand. In partnership with TABA (Turkish African Business Association) and Brandsbridge.",
+        "image": "/images/events/afex.png",
+        "videoUrl": "https://youtu.be/YJTSDxXIiUQ"
+      },
+      {
+        "name": "Food Industry Exhibition in Turkey",
+        "date": "July 02-05, 2025",
+        "location": "Istanbul, Turkey",
+        "description": "Participation in the food industry exhibition — Agribusiness and commercial opportunities.",
+        "image": "/images/events/afex1.png",
+        "videoUrl": "https://youtu.be/OxxUF2_vGVE"
+      }
+    ]
+  },
+  "gallery": {
+    "title": "Photo Gallery",
+    "subtitle": "Our events and meetings in pictures"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Ready to invest? Let's talk about your project. Our team responds within 48 hours.",
+    "panelTitle": "Let's talk about your project",
+    "panelSubtitle": "Our team is available to support you in your investment process.",
+    "infoPhone": "Phone",
+    "infoEmail": "Email",
+    "infoWeb": "Website",
+    "infoAddress": "Address",
+    "formTitle": "Send us a message",
+    "formSubtitle": "Guaranteed response within 48h",
+    "form": {
+      "name": "Full name",
+      "email": "Email",
+      "company": "Company",
+      "country": "Country",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send",
+      "required": "Required fields",
+      "placeholderName": "John Doe",
+      "placeholderEmail": "john@example.com",
+      "placeholderCompany": "Company Ltd",
+      "placeholderCountry": "DRC",
+      "placeholderSubject": "Partnership request",
+      "placeholderMessage": "Describe your investment project..."
+    }
+  },
+  "footer": {
+    "description": "The National Chamber of Commerce and Economy of the Democratic Republic of the Congo.",
+    "navigationTitle": "Navigation",
+    "contactTitle": "Contact",
+    "tutelleTitle": "Under the supervision of",
+    "copyright": "© 2025 CCNE-RDC — National Chamber of Commerce and Economy of the DRC. All rights reserved.",
+    "privacy": "Privacy",
+    "legal": "Legal Notice"
+  }
+}

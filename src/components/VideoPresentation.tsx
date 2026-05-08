@@ -1,9 +1,11 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 
 export default function VideoPresentation() {
+  const t = useTranslations();
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
@@ -46,14 +48,14 @@ export default function VideoPresentation() {
         <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 mb-6">
             <span className="px-3 py-1 rounded-full border border-[#C5A55A]/30 bg-[#C5A55A]/10 text-[#C5A55A] text-xs font-semibold tracking-widest uppercase">
-              Présentation
+              {t("video.badge")}
             </span>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight tracking-tight mb-4">
-            Découvrez la CCNE-RDC
+            {t("video.title")}
           </h2>
           <p className="text-white/50 text-lg max-w-2xl mx-auto">
-            En quelques minutes, comprenez pourquoi la RDC est votre prochaine destination d&apos;investissement.
+            {t("video.subtitle")}
           </p>
         </div>
 

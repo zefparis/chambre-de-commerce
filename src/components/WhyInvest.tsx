@@ -1,18 +1,18 @@
 "use client";
 
-import { useLanguage } from "@/hooks/useLanguage";
+import { useTranslations } from "next-intl";
 import { TrendingUp, Globe, Users, Shield } from "lucide-react";
 
 const icons = [TrendingUp, Globe, Users, Shield];
 
 export default function WhyInvest() {
-  const { t } = useLanguage();
+  const t = useTranslations();
 
   const cards = [
-    { title: t.whyInvest.card1Title, text: t.whyInvest.card1Text },
-    { title: t.whyInvest.card2Title, text: t.whyInvest.card2Text },
-    { title: t.whyInvest.card3Title, text: t.whyInvest.card3Text },
-    { title: t.whyInvest.card4Title, text: t.whyInvest.card4Text },
+    { title: t("whyInvest.card1Title"), text: t("whyInvest.card1Text") },
+    { title: t("whyInvest.card2Title"), text: t("whyInvest.card2Text") },
+    { title: t("whyInvest.card3Title"), text: t("whyInvest.card3Text") },
+    { title: t("whyInvest.card4Title"), text: t("whyInvest.card4Text") },
   ];
 
   return (
@@ -22,11 +22,11 @@ export default function WhyInvest() {
         <div className="text-center mb-10 md:mb-12">
           <div className="inline-flex items-center gap-2 mb-6">
             <span className="px-3 py-1 rounded-full border border-[#C5A55A]/30 bg-[#C5A55A]/5 text-[#C5A55A] text-xs font-semibold tracking-widest uppercase">
-              {t.nav.whyDRC}
+              {t("nav.whyDRC")}
             </span>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground leading-tight tracking-tight mb-4">
-            {t.whyInvest.title}
+            {t("whyInvest.title")}
           </h2>
         </div>
 

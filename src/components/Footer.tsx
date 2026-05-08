@@ -1,13 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { useLanguage } from "@/hooks/useLanguage";
+import { useTranslations } from "next-intl";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { navItems } from "@/data/navigation";
 import { ministerLogos } from "@/data/ministeres";
 
 export default function Footer() {
-  const { t } = useLanguage();
+  const t = useTranslations();
 
   return (
     <footer className="bg-foreground text-white pt-16 pb-10 overflow-hidden relative">
@@ -30,7 +30,7 @@ export default function Footer() {
               />
             </a>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
-              La Chambre de Commerce Nationale et de l&apos;Économie de la République Démocratique du Congo.
+              {t("footer.description")}
             </p>
             <div className="flex gap-4">
               {/* Social placeholders could go here */}
@@ -40,7 +40,7 @@ export default function Footer() {
           {/* Navigation */}
           <div>
             <h4 className="text-sm font-semibold text-white tracking-widest uppercase mb-6">
-              Navigation
+              {t("footer.navigationTitle")}
             </h4>
             <ul className="space-y-4">
               {navItems.map((item) => (
@@ -49,7 +49,7 @@ export default function Footer() {
                     href={item.href}
                     className="text-gray-400 hover:text-[#C5A55A] text-sm transition-colors duration-300"
                   >
-                    {t.nav[item.key]}
+                    {t(`nav.${item.key}`)}
                   </a>
                 </li>
               ))}
@@ -59,7 +59,7 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h4 className="text-sm font-semibold text-white tracking-widest uppercase mb-6">
-              Contact
+              {t("footer.contactTitle")}
             </h4>
             <ul className="space-y-6">
               <li className="flex items-start gap-3 group">
@@ -86,7 +86,7 @@ export default function Footer() {
           {/* Tutelle */}
           <div>
             <h4 className="text-sm font-semibold text-white tracking-widest uppercase mb-6">
-              Sous la tutelle de
+              {t("footer.tutelleTitle")}
             </h4>
             <div className="grid grid-cols-2 gap-4">
               {ministerLogos.map((logo) => (
@@ -110,11 +110,11 @@ export default function Footer() {
         {/* Copyright */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm">
-            {t.footer.copyright}
+            {t("footer.copyright")}
           </p>
           <div className="flex gap-6 text-sm text-gray-500">
-            <a href="#" className="hover:text-white transition-colors">Confidentialité</a>
-            <a href="#" className="hover:text-white transition-colors">Mentions légales</a>
+            <a href="#" className="hover:text-white transition-colors">{t("footer.privacy")}</a>
+            <a href="#" className="hover:text-white transition-colors">{t("footer.legal")}</a>
           </div>
         </div>
       </div>
