@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/navigation";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { navItems } from "@/data/navigation";
 import { locales, localeNames, localeFlags, type Locale } from "@/i18n/routing";
 
@@ -15,12 +15,9 @@ export default function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [langOpen, setLangOpen] = useState(false);
-  const langRef = useRef<HTMLDivElement>(null);
 
   const switchLocale = useCallback((newLocale: Locale) => {
     router.replace(pathname, { locale: newLocale });
-    setLangOpen(false);
     setMobileOpen(false);
   }, [router, pathname]);
 
@@ -29,17 +26,6 @@ export default function Header() {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [mobileOpen]);
-
-  // Close dropdown on outside click
-  useEffect(() => {
-    const handleClick = (e: MouseEvent) => {
-      if (langRef.current && !langRef.current.contains(e.target as Node)) {
-        setLangOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClick);
-    return () => document.removeEventListener("mousedown", handleClick);
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -97,44 +83,23 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Desktop: Lang dropdown + CTA */}
-          <div className="hidden lg:flex items-center gap-4">
-            <div className="relative" ref={langRef}>
-              <button
-                onClick={() => setLangOpen(!langOpen)}
-                className={`flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase transition-all duration-300 ${
-                  scrolled
-                    ? "text-gray-600 hover:text-black hover:bg-black/5"
-                    : "text-white/80 hover:text-white hover:bg-white/10"
-                }`}
-                aria-label="Change language"
-              >
-                <span className="text-base leading-none">{localeFlags[locale]}</span>
-                {locale.toUpperCase()}
-                <ChevronDown className={`h-3 w-3 transition-transform ${langOpen ? "rotate-180" : ""}`} />
-              </button>
-              {langOpen && (
-                <div className="absolute right-0 top-full mt-2 w-52 bg-white rounded-xl shadow-2xl border border-gray-100 py-1 z-50 max-h-80 overflow-y-auto">
-                  {locales.map((l) => (
-                    <button
-                      key={l}
-                      onClick={() => switchLocale(l)}
-                      className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm transition-colors ${
-                        l === locale
-                          ? "bg-[#003DA5]/10 text-[#003DA5] font-semibold"
-                          : "text-gray-700 hover:bg-gray-50"
-                      }`}
-                      dir={l === "ar" ? "rtl" : "ltr"}
-                    >
-                      <span className="text-lg leading-none">{localeFlags[l]}</span>
-                      <span>{localeNames[l]}</span>
-                      {l === locale && (
-                        <span className="ml-auto text-[#003DA5]">✓</span>
-                      )}
-                    </button>
-                  ))}
-                </div>
-              )}
+          {/* Desktop: inline flags + CTA */}
+          <div className="hidden lg:flex items-center gap-3">
+            <div className="flex items-center gap-1 rounded-full bg-black/5 backdrop-blur-lg px-2 py-1 border border-white/10">
+              {locales.map((l) => (
+                <button
+                  key={l}
+                  onClick={() => switchLocale(l)}
+                  title={localeNames[l]}
+                  className={`relative text-lg leading-none rounded-full w-8 h-8 flex items-center justify-center transition-all duration-200 ${
+                    l === locale
+                      ? "bg-white/90 shadow-sm scale-110 ring-2 ring-[#C5A55A]/50"
+                      : "hover:bg-white/20 hover:scale-105 opacity-70 hover:opacity-100"
+                  }`}
+                >
+                  {localeFlags[l]}
+                </button>
+              ))}
             </div>
             <button
               onClick={() => handleNavClick("#contact")}
@@ -148,22 +113,10 @@ export default function Header() {
             </button>
           </div>
 
-          {/* Mobile: flag + hamburger */}
+          {/* Mobile: hamburger only */}
           <div className="flex lg:hidden items-center gap-2">
             <button
-              onClick={() => { setLangOpen(!langOpen); setMobileOpen(false); }}
-              className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-xs font-bold transition-all ${
-                scrolled
-                  ? "text-gray-800 bg-gray-100 active:bg-gray-200"
-                  : "text-white bg-white/15 backdrop-blur-md active:bg-white/25"
-              }`}
-              aria-label="Change language"
-            >
-              <span className="text-base leading-none">{localeFlags[locale]}</span>
-              <span className="uppercase">{locale}</span>
-            </button>
-            <button
-              onClick={() => { setMobileOpen(!mobileOpen); setLangOpen(false); }}
+              onClick={() => setMobileOpen(!mobileOpen)}
               className={`p-2.5 rounded-full transition-colors ${
                 scrolled
                   ? "text-gray-800 hover:bg-gray-100 active:bg-gray-200"
@@ -177,71 +130,53 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile language dropdown (shown when langOpen on mobile) */}
-      {langOpen && (
-        <div className="lg:hidden absolute left-0 right-0 top-full bg-white shadow-xl border-t border-gray-100 z-40">
-          <div className="grid grid-cols-3 gap-1 p-3 max-w-lg mx-auto">
+      {/* Language flag strip — always visible below header */}
+      <div className={`transition-all duration-300 ${
+        scrolled 
+          ? "bg-white/60 backdrop-blur-md border-t border-gray-100/50" 
+          : "bg-black/10 backdrop-blur-md"
+      }`}>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center gap-1 py-1.5 overflow-x-auto scrollbar-hide">
             {locales.map((l) => (
               <button
                 key={l}
                 onClick={() => switchLocale(l)}
-                className={`flex items-center gap-2 px-3 py-3 rounded-xl text-sm font-medium transition-all active:scale-95 ${
+                title={localeNames[l]}
+                className={`shrink-0 flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium transition-all duration-200 active:scale-95 ${
                   l === locale
-                    ? "bg-[#003DA5] text-white shadow-md"
-                    : "text-gray-700 bg-gray-50 hover:bg-gray-100 active:bg-gray-200"
+                    ? scrolled
+                      ? "bg-[#003DA5] text-white shadow-md"
+                      : "bg-white text-gray-900 shadow-md"
+                    : scrolled
+                      ? "text-gray-600 hover:bg-gray-100 active:bg-gray-200"
+                      : "text-white/80 hover:bg-white/15 active:bg-white/25"
                 }`}
-                dir={l === "ar" ? "rtl" : "ltr"}
               >
-                <span className="text-lg leading-none">{localeFlags[l]}</span>
-                <span className="truncate">{localeNames[l]}</span>
+                <span className="text-base leading-none">{localeFlags[l]}</span>
+                <span className="hidden sm:inline">{l.toUpperCase()}</span>
               </button>
             ))}
           </div>
         </div>
-      )}
+      </div>
 
       {/* Mobile navigation menu — full screen overlay */}
       {mobileOpen && (
-        <div className="lg:hidden fixed inset-0 top-[calc(var(--header-h,56px))] bg-white z-40 overflow-y-auto"
-          style={{ "--header-h": scrolled ? "56px" : "64px" } as React.CSSProperties}
+        <div className="lg:hidden fixed inset-0 top-[calc(var(--header-h,80px))] bg-white z-40 overflow-y-auto"
+          style={{ "--header-h": scrolled ? "82px" : "96px" } as React.CSSProperties}
         >
           <nav className="flex flex-col py-3 px-4 min-h-full">
-            {/* Nav links */}
             <div className="flex-1 space-y-1">
-              {navItems.map((item, i) => (
+              {navItems.map((item) => (
                 <button
                   key={item.key}
                   onClick={() => handleNavClick(item.href)}
                   className="w-full flex items-center px-4 py-4 text-gray-700 hover:text-[#003DA5] active:bg-blue-50 rounded-xl text-base font-medium transition-colors border-b border-gray-50 last:border-0"
-                  style={{ animationDelay: `${i * 30}ms` }}
                 >
                   {t(`nav.${item.key}`)}
                 </button>
               ))}
-            </div>
-
-            {/* Language grid */}
-            <div className="mt-4 pt-4 border-t border-gray-100">
-              <p className="px-4 mb-3 text-xs font-semibold text-gray-400 uppercase tracking-widest">
-                🌐 Language
-              </p>
-              <div className="grid grid-cols-3 gap-2 px-2">
-                {locales.map((l) => (
-                  <button
-                    key={l}
-                    onClick={() => switchLocale(l)}
-                    className={`flex items-center gap-2 px-3 py-3 rounded-xl text-sm font-medium transition-all active:scale-95 ${
-                      l === locale
-                        ? "bg-[#003DA5] text-white shadow-md"
-                        : "text-gray-600 bg-gray-50 hover:bg-gray-100 active:bg-gray-200"
-                    }`}
-                    dir={l === "ar" ? "rtl" : "ltr"}
-                  >
-                    <span className="text-lg leading-none">{localeFlags[l]}</span>
-                    <span className="truncate text-xs">{localeNames[l]}</span>
-                  </button>
-                ))}
-              </div>
             </div>
 
             {/* CTA */}
