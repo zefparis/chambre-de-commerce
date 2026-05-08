@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -82,6 +83,11 @@ export default async function LocaleLayout({ children, params }: Props) {
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
+        <Script
+          src="https://hcs-widget-mvp.vercel.app/widget/v3/hcs-widget.js"
+          data-widget="wid_39b91024584328cd3fd5b9a8"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
