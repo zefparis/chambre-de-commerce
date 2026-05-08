@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { DM_Serif_Display, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 
@@ -30,6 +31,13 @@ export const metadata: Metadata = {
     "Business",
     "DRC",
   ],
+  metadataBase: new URL("https://ccne-rdc.vercel.app"),
+  alternates: {
+    canonical: "/",
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
   openGraph: {
     title: "CCNE-RDC — Chambre de Commerce Nationale et de l'Économie",
     description:
@@ -37,6 +45,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_CD",
     alternateLocale: "en_US",
+    url: "https://ccne-rdc.vercel.app",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CCNE-RDC — Chambre de Commerce Nationale et de l'Économie",
+    description:
+      "Votre partenaire pour investir en République Démocratique du Congo",
   },
 };
 
@@ -47,20 +62,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className="scroll-smooth">
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){
-  if(document.querySelector('script[data-widget]'))return;
-  var s=document.createElement('script');
-  s.src='https://hcs-widget-mvp.vercel.app/widget/v3/hcs-widget.js';
-  s.async=true;
-  s.setAttribute('data-widget','wid_2d494341d53a542185700fc8');
-  document.head.appendChild(s);
-})()`,
-          }}
-        />
-      </head>
+      <head />
+      <Script
+        src="https://hcs-widget-mvp.vercel.app/widget/v3/hcs-widget.js"
+        strategy="afterInteractive"
+        data-widget="wid_2d494341d53a542185700fc8"
+      />
       <body
         className={`${dmSerif.variable} ${sourceSans.variable} font-body antialiased`}
       >

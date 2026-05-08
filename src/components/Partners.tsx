@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/hooks/useLanguage";
 
 const partners = [
@@ -7,7 +8,7 @@ const partners = [
   { name: "Ministère du Commerce Extérieur", logo: "/images/partners/mce.png", url: "https://commerce.gouv.cd/" },
   { name: "Ministère de l'Entrepreneuriat et PME", logo: "/images/partners/mpme.png", url: "https://pme.gouv.cd/" },
   { name: "Ministère du Plan", logo: "/images/partners/mplan.png", url: "https://plan.gouv.cd/" },
-  { name: "CSCEC", logo: "/images/partners/cscec.png", url: "https://www.cscec.com/" },
+  { name: "CSCEC", logo: "/images/partners/cscec.svg", url: "https://www.cscec.com/" },
   { name: "Maroc Export", logo: "/images/partners/maroc-export.png", url: "https://asmex.org/" },
   { name: "Banque Mondiale / World Bank", logo: "/images/partners/banque-mondiale.png", url: "https://www.worldbank.org/" },
   { name: "Min. Coopération Internationale", logo: "/images/partners/mciirf.png", url: "https://diplomatie.gouv.cd/" },
@@ -42,14 +43,12 @@ export default function Partners() {
               className="group flex flex-col items-center justify-center gap-3 p-5 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
             >
               <div className="h-14 w-full flex items-center justify-center">
-                <img
+                <Image
                   src={partner.logo}
                   alt={partner.name}
+                  width={120}
+                  height={56}
                   className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = "none";
-                  }}
                 />
               </div>
               

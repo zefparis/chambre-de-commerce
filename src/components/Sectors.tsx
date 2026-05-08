@@ -6,12 +6,12 @@ import { Wheat, Mountain, Zap, Building2, Palmtree, Cpu } from "lucide-react";
 const sectorIcons = [Wheat, Mountain, Zap, Building2, Palmtree, Cpu];
 const sectorKeys = ["agriculture", "mining", "energy", "infrastructure", "tourism", "tech"] as const;
 const sectorImages = [
-  "/cards domaines/Agriculture.jpg",
-  "/cards domaines/Mining.jpg", 
-  "/cards domaines/Energy.jpg",
-  "/cards domaines/Infrastructure.jpg",
-  "/cards domaines/Tourism.jpg",
-  "/cards domaines/Tech.jpg"
+  "/cards%20domaines/Agriculture.jpg",
+  "/cards%20domaines/Mining.jpg", 
+  "/cards%20domaines/Energy.jpg",
+  "/cards%20domaines/Infrastructure.jpg",
+  "/cards%20domaines/Tourism.jpg",
+  "/cards%20domaines/Tech.jpg"
 ];
 
 export default function Sectors() {

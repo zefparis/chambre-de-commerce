@@ -1,14 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/hooks/useLanguage";
 import { Target, Handshake } from "lucide-react";
-
-const ministerLogos = [
-  { src: "/images/logos/ministere-affaires-etrangeres.png", alt: "Ministère des Affaires Étrangères" },
-  { src: "/images/logos/ministere-commerce-exterieur.png", alt: "Ministère du Commerce Extérieur" },
-  { src: "/images/logos/ministere-entrepreneuriat-pme.jpg", alt: "Ministère de l'Entrepreneuriat et PME" },
-  { src: "/images/logos/ministere-plan.png", alt: "Ministère du Plan" },
-];
+import { ministerLogos } from "@/data/ministeres";
 
 export default function About() {
   const { t } = useLanguage();
@@ -49,14 +44,12 @@ export default function About() {
                     className="group flex flex-col items-center gap-2 p-3 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
                   >
                     <div className="h-10 flex items-center justify-center">
-                      <img
+                      <Image
                         src={logo.src}
                         alt={logo.alt}
+                        width={80}
+                        height={40}
                         className="max-h-full w-auto object-contain group-hover:scale-105 transition-transform duration-300"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.style.display = "none";
-                        }}
                       />
                     </div>
                     <p className="text-[10px] text-center text-gray-600 font-medium leading-tight">
@@ -93,9 +86,11 @@ export default function About() {
                   <Handshake className="h-5 w-5" />
                   <span>Partenaire de confiance</span>
                 </div>
-                <img 
+                <Image 
                   src="/images/logos/LOGO-CCNE.jpg" 
                   alt="CCNE Logo" 
+                  width={60}
+                  height={32}
                   className="h-8 w-auto opacity-80"
                 />
               </div>

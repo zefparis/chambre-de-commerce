@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/hooks/useLanguage";
 
 export default function Team() {
@@ -27,14 +28,12 @@ export default function Team() {
             >
               {/* Photo — natural aspect ratio, no crop */}
               <div className="relative aspect-4/5 overflow-hidden bg-gray-100">
-                <img
+                <Image
                   src={member.photo}
                   alt={member.name}
-                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = "none";
-                  }}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 />
                 
                 {/* Bottom gradient for text readability */}

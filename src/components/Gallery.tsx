@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 import { useLanguage } from "@/hooks/useLanguage";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -17,9 +18,20 @@ const GALLERY_FILES = [
   "photo-8.jpg",
 ];
 
+const GALLERY_ALTS = [
+  "Délégation CCNE-RDC lors de l'AFEX 2025 à Istanbul",
+  "Signature de partenariat entre la CCNE-RDC et des investisseurs internationaux",
+  "Conférence sur les opportunités d'investissement en RDC",
+  "Rencontre officielle avec les représentants diplomatiques",
+  "Stand de la RD Congo au forum économique africain",
+  "Table ronde sur le commerce extérieur congolais",
+  "Réunion de travail de l'équipe dirigeante CCNE-RDC",
+  "Cérémonie d'ouverture du salon de l'industrie alimentaire",
+];
+
 const galleryImages = GALLERY_FILES.map((file, i) => ({
   src: `/images/gallery/${file}`,
-  alt: `CCNE-RDC ${i + 1}`,
+  alt: GALLERY_ALTS[i] || `Événement CCNE-RDC ${i + 1}`,
 }));
 
 export default function Gallery() {
@@ -74,9 +86,11 @@ export default function Gallery() {
               onClick={() => openLightbox(index)}
               className="group relative w-full rounded-2xl overflow-hidden bg-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 cursor-pointer break-inside-avoid"
             >
-              <img
+              <Image
                 src={img.src}
                 alt={img.alt}
+                width={600}
+                height={400}
                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500" />
@@ -122,9 +136,11 @@ export default function Gallery() {
             className="relative max-w-5xl w-full max-h-[85vh] flex flex-col items-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
+            <Image
               src={galleryImages[lightbox].src}
               alt={galleryImages[lightbox].alt}
+              width={1200}
+              height={800}
               className="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl"
             />
           </div>

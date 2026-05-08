@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/hooks/useLanguage";
 import { Calendar, MapPin, Play } from "lucide-react";
 
@@ -28,13 +29,12 @@ export default function Events() {
             >
               {/* Event image */}
               <div className="relative h-52 overflow-hidden">
-                <img
+                <Image
                   src={event.image}
                   alt={event.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).style.display = "none";
-                  }}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 
                 {/* Overlay */}

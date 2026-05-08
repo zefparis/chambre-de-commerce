@@ -1,20 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { useLanguage } from "@/hooks/useLanguage";
 import { Menu, X, Globe } from "lucide-react";
-
-const navItems = [
-  { key: "home", href: "#home" },
-  { key: "about", href: "#about" },
-  { key: "whyDRC", href: "#why-invest" },
-  { key: "services", href: "#sectors" },
-  { key: "team", href: "#team" },
-  { key: "network", href: "#network" },
-  { key: "partners", href: "#partners" },
-  { key: "events", href: "#events" },
-  { key: "contact", href: "#contact" },
-] as const;
+import { navItems } from "@/data/navigation";
 
 export default function Header() {
   const { t, lang, toggleLanguage } = useLanguage();
@@ -47,9 +37,11 @@ export default function Header() {
         <div className={`flex items-center justify-between transition-all duration-500 ${scrolled ? "h-16" : "h-24"}`}>
           {/* Logo */}
           <a href="#home" className="flex items-center shrink-0 group">
-            <img
+            <Image
               src="/images/logos/LOGO-CCNE.jpg"
               alt="CCNE-RDC"
+              width={120}
+              height={64}
               className={`w-auto transition-all duration-500 ${
                 scrolled 
                   ? "h-10 rounded shadow-sm" 

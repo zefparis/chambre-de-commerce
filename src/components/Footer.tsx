@@ -1,17 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/hooks/useLanguage";
 import { Phone, Mail, MapPin } from "lucide-react";
-
-const navItems = [
-  { key: "home", href: "#home" },
-  { key: "about", href: "#about" },
-  { key: "whyDRC", href: "#why-invest" },
-  { key: "services", href: "#sectors" },
-  { key: "team", href: "#team" },
-  { key: "network", href: "#network" },
-  { key: "contact", href: "#contact" },
-] as const;
+import { navItems } from "@/data/navigation";
+import { ministerLogos } from "@/data/ministeres";
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -28,14 +21,16 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1 space-y-6">
             <a href="#home" className="inline-block">
-              <img
+              <Image
                 src="/images/logos/LOGO-CCNE.jpg"
                 alt="CCNE-RDC"
+                width={100}
+                height={56}
                 className="h-14 w-auto rounded-lg bg-white p-1"
               />
             </a>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
-              La Chambre de Commerce Nationale et de l'Économie de la République Démocratique du Congo.
+              La Chambre de Commerce Nationale et de l&apos;Économie de la République Démocratique du Congo.
             </p>
             <div className="flex gap-4">
               {/* Social placeholders could go here */}
@@ -75,8 +70,8 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3 group">
                 <Mail className="h-5 w-5 text-[#C5A55A] mt-0.5 shrink-0 group-hover:text-white transition-colors" />
-                <a href="mailto:ccne-rdc23@gmail.com" className="text-gray-400 hover:text-white text-sm transition-colors">
-                  ccne-rdc23@gmail.com
+                <a href="mailto:ccnerdc3@gmail.com" className="text-gray-400 hover:text-white text-sm transition-colors">
+                  ccnerdc3@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3 group">
@@ -94,24 +89,17 @@ export default function Footer() {
               Sous la tutelle de
             </h4>
             <div className="grid grid-cols-2 gap-4">
-              {[
-                { src: "/images/logos/ministere-affaires-etrangeres.png", alt: "MAE" },
-                { src: "/images/logos/ministere-commerce-exterieur.png", alt: "MCE" },
-                { src: "/images/logos/ministere-entrepreneuriat-pme.jpg", alt: "MPME" },
-                { src: "/images/logos/ministere-plan.png", alt: "MPlan" },
-              ].map((logo) => (
+              {ministerLogos.map((logo) => (
                 <div 
                   key={logo.alt} 
                   className="h-12 bg-white/5 rounded-lg flex items-center justify-center p-2 hover:bg-white/10 transition-colors duration-300 group"
                 >
-                  <img 
+                  <Image 
                     src={logo.src} 
                     alt={logo.alt} 
+                    width={80}
+                    height={48}
                     className="max-h-full max-w-full object-contain opacity-50 group-hover:opacity-100 transition-opacity duration-300 grayscale group-hover:grayscale-0"
-                    onError={(e) => {
-                      const t = e.target as HTMLImageElement;
-                      t.style.display = "none";
-                    }} 
                   />
                 </div>
               ))}

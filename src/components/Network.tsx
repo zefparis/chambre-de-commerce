@@ -1,8 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "@/hooks/useLanguage";
 import { MapPin } from "lucide-react";
-type Lang = "fr" | "en";
 
 const countryFlags: Record<string, string> = {
   "Zambie": "/images/flags/zambia.svg", "Zambia": "/images/flags/zambia.svg",
@@ -56,9 +56,11 @@ export default function Network() {
             >
               <div className="shrink-0 transition-transform duration-300 group-hover:scale-110">
                 {countryFlags[country].startsWith('/') ? (
-                  <img 
+                  <Image 
                     src={countryFlags[country]} 
                     alt={country}
+                    width={32}
+                    height={24}
                     className="w-8 h-auto rounded shadow-sm"
                   />
                 ) : (
