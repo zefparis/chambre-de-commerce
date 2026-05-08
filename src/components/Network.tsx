@@ -56,7 +56,7 @@ export default function Network() {
               className="group flex items-center gap-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl px-5 py-4 hover:bg-white/10 hover:border-[#C5A55A]/50 hover:scale-[1.02] transition-all duration-300"
             >
               <div className="shrink-0 transition-transform duration-300 group-hover:scale-110">
-                {countryFlags[country].startsWith('/') ? (
+                {countryFlags[country]?.startsWith('/') ? (
                   <Image 
                     src={countryFlags[country]} 
                     alt={country}
