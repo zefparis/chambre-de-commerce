@@ -17,6 +17,7 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const langRef = useRef<HTMLDivElement>(null);
+  const mobileLangRef = useRef<HTMLDivElement>(null);
 
   const switchLocale = useCallback((newLocale: Locale) => {
     router.replace(pathname, { locale: newLocale });
@@ -33,7 +34,10 @@ export default function Header() {
   // Close lang dropdown on outside click
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
-      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+      const target = e.target as Node;
+      const insideDesktop = langRef.current?.contains(target);
+      const insideMobile = mobileLangRef.current?.contains(target);
+      if (!insideDesktop && !insideMobile) {
         setLangOpen(false);
       }
     };
@@ -180,7 +184,7 @@ export default function Header() {
 
       {/* Language dropdown (mobile) — opens below header */}
       {langOpen && (
-        <div className="lg:hidden bg-white shadow-xl border-t border-gray-100 z-40">
+        <div ref={mobileLangRef} className="lg:hidden bg-white shadow-xl border-t border-gray-100 z-40">
           <div className="grid grid-cols-2 gap-1 p-3 max-w-md mx-auto">
             {locales.map((l) => (
               <button
