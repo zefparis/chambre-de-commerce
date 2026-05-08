@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -77,11 +76,6 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <html lang={locale} dir={dir} className="scroll-smooth">
       <head />
-      <Script
-        src="https://hcs-widget-mvp.vercel.app/widget/v3/hcs-widget.js"
-        strategy="afterInteractive"
-        data-widget="wid_2d494341d53a542185700fc8"
-      />
       <body
         className={`${dmSerif.variable} ${sourceSans.variable} font-body antialiased`}
       >
