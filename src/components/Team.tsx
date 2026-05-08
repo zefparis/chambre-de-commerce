@@ -16,17 +16,17 @@ const members = [
     photo: "/images/team/directeur-general.jpg",
   },
   {
-    name: "À compléter",
+    name: "Anthony Lacolombe Molongya",
     role: "Administrateur Directeur Général",
     photo: "/images/team/Administrateur%20directeur%20g%C3%A9n%C3%A9ral.jpeg",
   },
   {
-    name: "À compléter",
+    name: "Rex Daniel Kilauri",
     role: "Adjoint en charge des Projets et Investissements",
     photo: "/images/team/Adjoint%20en%20charge%20projets%20et%20Investissements.jpeg",
   },
   {
-    name: "À compléter",
+    name: "Kale Kapenga Kilolo",
     role: "Directeur chargé des Relations Publiques",
     photo: "/images/team/Directeur%20charg%C3%A9%20des%20relations%20publiques.jpeg",
   },
@@ -63,7 +63,8 @@ export default function Team() {
                 alt={featured.name}
                 fill
                 sizes="(max-width: 640px) 100vw, 672px"
-                className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                style={{ objectPosition: "center 20%" }}
               />
               <div className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-black/80 via-black/40 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
