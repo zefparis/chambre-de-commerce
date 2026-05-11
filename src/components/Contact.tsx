@@ -25,7 +25,7 @@ export default function Contact() {
   };
 
   const contactInfo = [
-    { icon: Phone, title: t("contact.infoPhone"), label: "+243 980 691 637", sublabel: "+243 980 691 637 / +243 980 691 637" },
+    { icon: Phone, title: t("contact.infoPhone"), label: "+243 980 691 637" },
     { icon: Mail, title: t("contact.infoEmail"), label: "ccnerdc149@gmail.com", href: "mailto:ccnerdc149@gmail.com" },
     { icon: Globe, title: t("contact.infoWeb"), label: "www.ccne-rdc.com", href: "https://www.ccne-rdc.com" },
     { icon: MapPin, title: t("contact.infoAddress"), label: "16 Av Allee Verte, Ngaliema", sublabel: "Kinshasa, RDC" },
