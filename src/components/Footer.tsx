@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Globe } from "lucide-react";
 import { navItems } from "@/data/navigation";
 import { ministerLogos } from "@/data/ministeres";
 
@@ -65,19 +65,25 @@ export default function Footer() {
               <li className="flex items-start gap-3 group">
                 <Phone className="h-5 w-5 text-[#C5A55A] mt-0.5 shrink-0 group-hover:text-white transition-colors" />
                 <span className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors">
-                  +243 846 870 811
+                  +243 980 691 637
                 </span>
               </li>
               <li className="flex items-start gap-3 group">
                 <Mail className="h-5 w-5 text-[#C5A55A] mt-0.5 shrink-0 group-hover:text-white transition-colors" />
-                <a href="mailto:ccnerdc3@gmail.com" className="text-gray-400 hover:text-white text-sm transition-colors">
-                  ccnerdc3@gmail.com
+                <a href="mailto:ccnerdc149@gmail.com" className="text-gray-400 hover:text-white text-sm transition-colors">
+                  ccnerdc149@gmail.com
+                </a>
+              </li>
+              <li className="flex items-start gap-3 group">
+                <Globe className="h-5 w-5 text-[#C5A55A] mt-0.5 shrink-0 group-hover:text-white transition-colors" />
+                <a href="https://www.ccne-rdc.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-sm transition-colors">
+                  www.ccne-rdc.com
                 </a>
               </li>
               <li className="flex items-start gap-3 group">
                 <MapPin className="h-5 w-5 text-[#C5A55A] mt-0.5 shrink-0 group-hover:text-white transition-colors" />
                 <span className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 transition-colors">
-                  16 Ave Londola, Lingwala,<br />Kinshasa, RDC
+                  16 Av Allee Verte, Ngaliema,<br />Kinshasa, RDC
                 </span>
               </li>
             </ul>
