@@ -25,10 +25,10 @@ export default function Contact() {
   };
 
   const contactInfo = [
-    { icon: Phone, title: t("contact.infoPhone"), label: "+243 977 993 499", sublabel: "+243 980 691 637 / +243 846 870 811" },
-    { icon: Mail, title: t("contact.infoEmail"), label: "ccnerdc3@gmail.com", href: "mailto:ccnerdc3@gmail.com" },
+    { icon: Phone, title: t("contact.infoPhone"), label: "+243 980 691 637", sublabel: "+243 980 691 637 / +243 980 691 637" },
+    { icon: Mail, title: t("contact.infoEmail"), label: "ccnerdc149@gmail.com", href: "mailto:ccnerdc149@gmail.com" },
     { icon: Globe, title: t("contact.infoWeb"), label: "www.ccne-rdc.com", href: "https://www.ccne-rdc.com" },
-    { icon: MapPin, title: t("contact.infoAddress"), label: "16 Avenue Londola, Lingwala", sublabel: "Kinshasa, RDC" },
+    { icon: MapPin, title: t("contact.infoAddress"), label: "16 Av Allee Verte, Ngaliema", sublabel: "Kinshasa, RDC" },
   ];
 
   return (
